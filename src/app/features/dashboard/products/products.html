@@ -1,1 +1,314 @@
-<p>products works!</p>
+<main class="flex-1 overflow-y-auto p-8 scroll-smooth flex flex-col gap-6">
+                    <app-dashboard-header title="products" , description="Manage and track your incoming products" ,   [showAddButton]="true"
+  AddButtonText="Add Product"></app-dashboard-header>
+
+              
+    <app-food-filter></app-food-filter>
+            <!-- Content Area: Grid -->
+            <div class="p-6 md:p-8">
+                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
+                    <!-- Card 1: In Stock -->
+                    <div
+                        class="group bg-surface-light dark:bg-surface-dark rounded-xl border border-gray-100 dark:border-gray-800 shadow-sm hover:shadow-md hover:border-primary/30 transition-all duration-200 overflow-hidden flex flex-col">
+                        <div class="relative h-48 w-full overflow-hidden">
+                            <img alt="Juicy cheeseburger with fresh lettuce and tomato"
+                                class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                                data-alt="Juicy cheeseburger with fresh lettuce and tomato"
+                                src="https://lh3.googleusercontent.com/aida-public/AB6AXuCW8Me5Vb5qP_OmvBbnfCluxjDEey3wMIlswvEePZzbkByIKD1zk-5lNkyi7ZoV1KMGJ0yYSRGKBOSMNVDs5NzjyPXHDTz01P-7hqGHYfDtvFcNIqE1HWo1ondqwbDeiQF6rB_UjxZTOHp-dvpX1sgGAR6dO7LJXHlc7IlJ40h4Nds4EV6uJwm3apvLXzjl-6lCCF-uDhJG7fnuA2n9OZMtJeVjeUaVl5as7YAlwSV5IA7_uO4qsa_XE95rpMf9GclYOR8yl_OAUOc" />
+                            <div class="absolute top-3 left-3">
+                                <span
+                                    class="px-2 py-1 bg-green-500/90 text-white text-xs font-bold rounded shadow-sm backdrop-blur-sm">In
+                                    Stock</span>
+                            </div>
+                            <button
+                                class="absolute top-3 right-3 p-1.5 bg-white/80 dark:bg-black/50 hover:bg-white dark:hover:bg-black text-text-main-light dark:text-white rounded-full opacity-0 group-hover:opacity-100 transition-opacity backdrop-blur-sm">
+                                <span class="material-symbols-outlined text-[20px]">more_vert</span>
+                            </button>
+                        </div>
+                        <div class="p-4 flex flex-col grow">
+                            <div class="flex justify-between items-start mb-2">
+                                <div>
+                                    <h3
+                                        class="text-text-main-light dark:text-text-main-dark font-bold text-lg leading-tight mb-1">
+                                        Classic Cheeseburger</h3>
+                                    <p
+                                        class="text-text-sub-light dark:text-text-sub-dark text-xs font-medium uppercase tracking-wide">
+                                        Mains</p>
+                                </div>
+                                <span class="text-primary font-bold text-lg">$12.99</span>
+                            </div>
+                            <div
+                                class="mt-auto pt-4 border-t border-gray-100 dark:border-gray-800 flex items-center justify-between">
+                                <span class="text-text-sub-light dark:text-text-sub-dark text-xs">ID: #4920</span>
+                                <div class="flex items-center gap-2">
+                                    <button
+                                        class="text-text-sub-light dark:text-text-sub-dark hover:text-primary transition-colors"><span
+                                            class="material-symbols-outlined text-[20px]">edit</span></button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Card 2: Low Stock -->
+                    <div
+                        class="group bg-surface-light dark:bg-surface-dark rounded-xl border border-gray-100 dark:border-gray-800 shadow-sm hover:shadow-md hover:border-primary/30 transition-all duration-200 overflow-hidden flex flex-col">
+                        <div class="relative h-48 w-full overflow-hidden">
+                            <img alt="Plate of creamy truffle carbonara pasta"
+                                class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                                data-alt="Plate of creamy truffle carbonara pasta"
+                                src="https://lh3.googleusercontent.com/aida-public/AB6AXuAYOMO3crkAA3KYzMTmS1GCXWOs1xShXuk8P5LQ-PRMGVwSgG1SiXbuewqRif6S1Nc96OfmGn5in4Em9Bf_jOvlKKYP8ykmfzBFrc_pjJMTUtReUlRRk8kruw-_O_JP0OuOvBnu5fNe7hmHWZrdiu5AtDTDA-eSOlk2bOi-NW2HRcRbopJaNoTC6T9_JRObxBo7QRgD7x9nfGD_U6mY0KtScHBfEs60Wt1qr2do-lkxu-CBFteipNLTRfM9UW4XI3BtFSNplC74GEM" />
+                            <div class="absolute top-3 left-3">
+                                <span
+                                    class="px-2 py-1 bg-amber-500/90 text-white text-xs font-bold rounded shadow-sm backdrop-blur-sm">Low
+                                    Stock</span>
+                            </div>
+                            <button
+                                class="absolute top-3 right-3 p-1.5 bg-white/80 dark:bg-black/50 hover:bg-white dark:hover:bg-black text-text-main-light dark:text-white rounded-full opacity-0 group-hover:opacity-100 transition-opacity backdrop-blur-sm">
+                                <span class="material-symbols-outlined text-[20px]">more_vert</span>
+                            </button>
+                        </div>
+                        <div class="p-4 flex flex-col grow">
+                            <div class="flex justify-between items-start mb-2">
+                                <div>
+                                    <h3
+                                        class="text-text-main-light dark:text-text-main-dark font-bold text-lg leading-tight mb-1">
+                                        Truffle Carbonara</h3>
+                                    <p
+                                        class="text-text-sub-light dark:text-text-sub-dark text-xs font-medium uppercase tracking-wide">
+                                        Mains</p>
+                                </div>
+                                <span class="text-primary font-bold text-lg">$18.50</span>
+                            </div>
+                            <div
+                                class="mt-auto pt-4 border-t border-gray-100 dark:border-gray-800 flex items-center justify-between">
+                                <span class="text-text-sub-light dark:text-text-sub-dark text-xs">ID: #4921</span>
+                                <div class="flex items-center gap-2">
+                                    <button
+                                        class="text-text-sub-light dark:text-text-sub-dark hover:text-primary transition-colors"><span
+                                            class="material-symbols-outlined text-[20px]">edit</span></button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Card 3: Sold Out -->
+                    <div
+                        class="group bg-surface-light dark:bg-surface-dark rounded-xl border border-gray-100 dark:border-gray-800 shadow-sm hover:shadow-md transition-all duration-200 overflow-hidden flex flex-col opacity-75 hover:opacity-100">
+                        <div
+                            class="relative h-48 w-full overflow-hidden grayscale group-hover:grayscale-0 transition-all duration-500">
+                            <img alt="Refreshing iced matcha latte in a glass"
+                                class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                                data-alt="Refreshing iced matcha latte in a glass"
+                                src="https://lh3.googleusercontent.com/aida-public/AB6AXuCXAOfH4lCvBjyrPpUK-VWVHIRJKrnambAz5gCZODjA6SP1lhfc6ka72lejto5Qq6KwGqx7bH8Q2czpZ9M4qz2crvjvRjJqfMkJ1rHmc0E0MpfvjeCNQftkocL2wQlvwt0I_eN4-HINfs_LCU1kybNmzGb-axeZPx1lreUPGrkYuTwmdNnBemUTbNtGDIwtbhlNgDhRpNSAekOjM1oDMoH0G9Iy09wm8Rykwk1QadM2vFD7lSrjT95k_ZlrKNQuW5AmHkohjQWNO14" />
+                            <div class="absolute top-3 left-3">
+                                <span
+                                    class="px-2 py-1 bg-gray-600/90 text-white text-xs font-bold rounded shadow-sm backdrop-blur-sm">Sold
+                                    Out</span>
+                            </div>
+                            <button
+                                class="absolute top-3 right-3 p-1.5 bg-white/80 dark:bg-black/50 hover:bg-white dark:hover:bg-black text-text-main-light dark:text-white rounded-full opacity-0 group-hover:opacity-100 transition-opacity backdrop-blur-sm">
+                                <span class="material-symbols-outlined text-[20px]">more_vert</span>
+                            </button>
+                        </div>
+                        <div class="p-4 flex flex-col grow">
+                            <div class="flex justify-between items-start mb-2">
+                                <div>
+                                    <h3
+                                        class="text-text-main-light dark:text-text-main-dark font-bold text-lg leading-tight mb-1">
+                                        Iced Matcha Latte</h3>
+                                    <p
+                                        class="text-text-sub-light dark:text-text-sub-dark text-xs font-medium uppercase tracking-wide">
+                                        Drinks</p>
+                                </div>
+                                <span class="text-primary font-bold text-lg">$5.50</span>
+                            </div>
+                            <div
+                                class="mt-auto pt-4 border-t border-gray-100 dark:border-gray-800 flex items-center justify-between">
+                                <span class="text-text-sub-light dark:text-text-sub-dark text-xs">ID: #4922</span>
+                                <div class="flex items-center gap-2">
+                                    <button
+                                        class="text-text-sub-light dark:text-text-sub-dark hover:text-primary transition-colors"><span
+                                            class="material-symbols-outlined text-[20px]">edit</span></button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Card 4 -->
+                    <div
+                        class="group bg-surface-light dark:bg-surface-dark rounded-xl border border-gray-100 dark:border-gray-800 shadow-sm hover:shadow-md hover:border-primary/30 transition-all duration-200 overflow-hidden flex flex-col">
+                        <div class="relative h-48 w-full overflow-hidden">
+                            <img alt="Fresh caesar salad with croutons"
+                                class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                                data-alt="Fresh caesar salad with croutons"
+                                src="https://lh3.googleusercontent.com/aida-public/AB6AXuAGUyqC2w6jcEs1FFQWfx7UYnm8M8YHuePTTIyQeFHNcPGNfxmKMFsG_LE6rUDVM60XS8bkJ6Diy4rnnNXgEZWLxopMJ7mBaHAjhE_rlhZDOJyHOxlqeqZ77W0-BQArVzbM3QK_UNpTKFsxR1w66utiCzqpBJNVJkokjMzS4z0eFnH44kHhgEiKrIx2YC3CRD1YP3qJ0_sbZIwrJUqqBYcmWExrSiLfNv0AcsNyjvkFxxQkbZWzakfeOW1BjRPzPR3SP0SL-vzY5O8" />
+                            <div class="absolute top-3 left-3">
+                                <span
+                                    class="px-2 py-1 bg-green-500/90 text-white text-xs font-bold rounded shadow-sm backdrop-blur-sm">In
+                                    Stock</span>
+                            </div>
+                            <button
+                                class="absolute top-3 right-3 p-1.5 bg-white/80 dark:bg-black/50 hover:bg-white dark:hover:bg-black text-text-main-light dark:text-white rounded-full opacity-0 group-hover:opacity-100 transition-opacity backdrop-blur-sm">
+                                <span class="material-symbols-outlined text-[20px]">more_vert</span>
+                            </button>
+                        </div>
+                        <div class="p-4 flex flex-col grow">
+                            <div class="flex justify-between items-start mb-2">
+                                <div>
+                                    <h3
+                                        class="text-text-main-light dark:text-text-main-dark font-bold text-lg leading-tight mb-1">
+                                        Caesar Salad</h3>
+                                    <p
+                                        class="text-text-sub-light dark:text-text-sub-dark text-xs font-medium uppercase tracking-wide">
+                                        Appetizers</p>
+                                </div>
+                                <span class="text-primary font-bold text-lg">$9.00</span>
+                            </div>
+                            <div
+                                class="mt-auto pt-4 border-t border-gray-100 dark:border-gray-800 flex items-center justify-between">
+                                <span class="text-text-sub-light dark:text-text-sub-dark text-xs">ID: #4923</span>
+                                <div class="flex items-center gap-2">
+                                    <button
+                                        class="text-text-sub-light dark:text-text-sub-dark hover:text-primary transition-colors"><span
+                                            class="material-symbols-outlined text-[20px]">edit</span></button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Card 5 -->
+                    <div
+                        class="group bg-surface-light dark:bg-surface-dark rounded-xl border border-gray-100 dark:border-gray-800 shadow-sm hover:shadow-md hover:border-primary/30 transition-all duration-200 overflow-hidden flex flex-col">
+                        <div class="relative h-48 w-full overflow-hidden">
+                            <img alt="Crispy spring rolls with dipping sauce"
+                                class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                                data-alt="Crispy spring rolls with dipping sauce"
+                                src="https://lh3.googleusercontent.com/aida-public/AB6AXuDeG9LOcB_9Bs_fq1G2SNhR2d3lWUFxcrR_cFI5yo3K0etYMj0km3rpGAd_DIAO5idS95-nixspz1VN7ccksEmmtUjo1CPZKeY1Se96jFq5Wga7wkXPLibVhJg-GImX0ABCql53h6O4XCTnbgV22HfowdtPrTDgNG7nNqJxTfSHTQnJB-rgWEcZ32Wzxjn1IOpI7Dr1YnDJteV3cH2p2ay66eVHCO-LBRZnOCPlQ2txL6gNG1iqbYPzISXuy8Nwrr-3MdN0m6vm6J4" />
+                            <div class="absolute top-3 left-3">
+                                <span
+                                    class="px-2 py-1 bg-green-500/90 text-white text-xs font-bold rounded shadow-sm backdrop-blur-sm">In
+                                    Stock</span>
+                            </div>
+                            <button
+                                class="absolute top-3 right-3 p-1.5 bg-white/80 dark:bg-black/50 hover:bg-white dark:hover:bg-black text-text-main-light dark:text-white rounded-full opacity-0 group-hover:opacity-100 transition-opacity backdrop-blur-sm">
+                                <span class="material-symbols-outlined text-[20px]">more_vert</span>
+                            </button>
+                        </div>
+                        <div class="p-4 flex flex-col grow">
+                            <div class="flex justify-between items-start mb-2">
+                                <div>
+                                    <h3
+                                        class="text-text-main-light dark:text-text-main-dark font-bold text-lg leading-tight mb-1">
+                                        Veggie Spring Rolls</h3>
+                                    <p
+                                        class="text-text-sub-light dark:text-text-sub-dark text-xs font-medium uppercase tracking-wide">
+                                        Appetizers</p>
+                                </div>
+                                <span class="text-primary font-bold text-lg">$6.50</span>
+                            </div>
+                            <div
+                                class="mt-auto pt-4 border-t border-gray-100 dark:border-gray-800 flex items-center justify-between">
+                                <span class="text-text-sub-light dark:text-text-sub-dark text-xs">ID: #4924</span>
+                                <div class="flex items-center gap-2">
+                                    <button
+                                        class="text-text-sub-light dark:text-text-sub-dark hover:text-primary transition-colors"><span
+                                            class="material-symbols-outlined text-[20px]">edit</span></button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Card 6 -->
+                    <div
+                        class="group bg-surface-light dark:bg-surface-dark rounded-xl border border-gray-100 dark:border-gray-800 shadow-sm hover:shadow-md hover:border-primary/30 transition-all duration-200 overflow-hidden flex flex-col">
+                        <div class="relative h-48 w-full overflow-hidden">
+                            <img alt="Slice of rich chocolate cake"
+                                class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                                data-alt="Slice of rich chocolate cake"
+                                src="https://lh3.googleusercontent.com/aida-public/AB6AXuA-pEEBKQW2omEWT5syxTv9izD3N75V0Ye0NSlj_amKDJGnwgVW9u-k2BXBnB88YB42eAHCfJvs3F89xtBFMuxLPtajoTHiPiymBq1DAz2LsYC3yEH_qQOqDd0ay7fBFbZ1IAIpNW2W1I7RLQvB89tTN-yMp6ZOIKpFh_3zhfMtXwgiPJ7nSt5J0ulSV1RkdePbITdb3FURyWimCKIvI9gJQiq1ObBkPs8EWZHZaeIaI_uOv4zHa0k0OlbyglJ4xuOsMklyhQLlyNs" />
+                            <div class="absolute top-3 left-3">
+                                <span
+                                    class="px-2 py-1 bg-green-500/90 text-white text-xs font-bold rounded shadow-sm backdrop-blur-sm">In
+                                    Stock</span>
+                            </div>
+                            <button
+                                class="absolute top-3 right-3 p-1.5 bg-white/80 dark:bg-black/50 hover:bg-white dark:hover:bg-black text-text-main-light dark:text-white rounded-full opacity-0 group-hover:opacity-100 transition-opacity backdrop-blur-sm">
+                                <span class="material-symbols-outlined text-[20px]">more_vert</span>
+                            </button>
+                        </div>
+                        <div class="p-4 flex flex-col grow">
+                            <div class="flex justify-between items-start mb-2">
+                                <div>
+                                    <h3
+                                        class="text-text-main-light dark:text-text-main-dark font-bold text-lg leading-tight mb-1">
+                                        Chocolate Fudge Cake</h3>
+                                    <p
+                                        class="text-text-sub-light dark:text-text-sub-dark text-xs font-medium uppercase tracking-wide">
+                                        Desserts</p>
+                                </div>
+                                <span class="text-primary font-bold text-lg">$7.00</span>
+                            </div>
+                            <div
+                                class="mt-auto pt-4 border-t border-gray-100 dark:border-gray-800 flex items-center justify-between">
+                                <span class="text-text-sub-light dark:text-text-sub-dark text-xs">ID: #4925</span>
+                                <div class="flex items-center gap-2">
+                                    <button
+                                        class="text-text-sub-light dark:text-text-sub-dark hover:text-primary transition-colors"><span
+                                            class="material-symbols-outlined text-[20px]">edit</span></button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Card 7 -->
+                    <div
+                        class="group bg-surface-light dark:bg-surface-dark rounded-xl border border-gray-100 dark:border-gray-800 shadow-sm hover:shadow-md hover:border-primary/30 transition-all duration-200 overflow-hidden flex flex-col">
+                        <div class="relative h-48 w-full overflow-hidden">
+                            <img alt="Gourmet pizza with basil and mozzarella"
+                                class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                                data-alt="Gourmet pizza with basil and mozzarella"
+                                src="https://lh3.googleusercontent.com/aida-public/AB6AXuDkPNjtHtgU3D8LUKEFdlw_shfzMQc5P0uGaTw7vT0eFWl1-OZsCgU_Y_PvLrqHxgtNB07WpwOhNjJWAz3I3ENYgV7gQfPogOO5DHCDNDGlKUpgVcT8VjmY1P-hSy8m_NVvuKjG_S1va0F7ZLJ-ge6dG455ay2IigdteJtduOEhw8z9PztYZrbVR7YXNmYydhiScfPl6cN24fFlCnQmAByvfZoQLh2S9bP-c9zkCr8i8o7VLocyOR-A9GJGhyBgVtLx7MYGsAg9oRc" />
+                            <div class="absolute top-3 left-3">
+                                <span
+                                    class="px-2 py-1 bg-green-500/90 text-white text-xs font-bold rounded shadow-sm backdrop-blur-sm">In
+                                    Stock</span>
+                            </div>
+                            <button
+                                class="absolute top-3 right-3 p-1.5 bg-white/80 dark:bg-black/50 hover:bg-white dark:hover:bg-black text-text-main-light dark:text-white rounded-full opacity-0 group-hover:opacity-100 transition-opacity backdrop-blur-sm">
+                                <span class="material-symbols-outlined text-[20px]">more_vert</span>
+                            </button>
+                        </div>
+                        <div class="p-4 flex flex-col grow">
+                            <div class="flex justify-between items-start mb-2">
+                                <div>
+                                    <h3
+                                        class="text-text-main-light dark:text-text-main-dark font-bold text-lg leading-tight mb-1">
+                                        Margherita Pizza</h3>
+                                    <p
+                                        class="text-text-sub-light dark:text-text-sub-dark text-xs font-medium uppercase tracking-wide">
+                                        Mains</p>
+                                </div>
+                                <span class="text-primary font-bold text-lg">$14.00</span>
+                            </div>
+                            <div
+                                class="mt-auto pt-4 border-t border-gray-100 dark:border-gray-800 flex items-center justify-between">
+                                <span class="text-text-sub-light dark:text-text-sub-dark text-xs">ID: #4926</span>
+                                <div class="flex items-center gap-2">
+                                    <button
+                                        class="text-text-sub-light dark:text-text-sub-dark hover:text-primary transition-colors"><span
+                                            class="material-symbols-outlined text-[20px]">edit</span></button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Card 8: Add New Ghost Card -->
+                    <div
+                        class="group rounded-xl border-2 border-dashed border-gray-300 dark:border-gray-700 hover:border-primary dark:hover:border-primary hover:bg-primary/5 transition-all duration-200 flex flex-col items-center justify-center p-6 cursor-pointer h-full min-h-[300px]">
+                        <div
+                            class="w-16 h-16 rounded-full bg-gray-100 dark:bg-gray-800 flex items-center justify-center mb-4 group-hover:bg-white dark:group-hover:bg-surface-dark group-hover:scale-110 transition-all duration-200">
+                            <span
+                                class="material-symbols-outlined text-gray-400 dark:text-gray-500 group-hover:text-primary text-[32px]">add</span>
+                        </div>
+                        <h3 class="text-text-main-light dark:text-text-main-dark font-bold text-lg">Add New Product</h3>
+                        <p class="text-text-sub-light dark:text-text-sub-dark text-sm mt-1">Create a new item for your
+                            menu</p>
+                    </div>
+                </div>
+            </div>
+            <!-- Pagination Footer -->
+            <app-pagination></app-pagination>
+        </main>

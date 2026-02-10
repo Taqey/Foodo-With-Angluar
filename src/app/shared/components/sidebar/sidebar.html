@@ -7,71 +7,69 @@
 
         <nav class="flex flex-col gap-1">
             <!-- Dashboard -->
-            <a
-                [routerLink]="['/dashboard']"
-                routerLinkActive="bg-primary/10 text-primary"
+            <a [routerLink]="['/dashboard']" routerLinkActive="bg-primary/10 text-primary"
                 [routerLinkActiveOptions]="{ exact: true }"
-                class="flex items-center gap-3 px-3 py-2.5 rounded-lg text-slate-600 dark:text-slate-400 hover:bg-slate-50 dark:hover:bg-slate-800 hover:text-slate-900 dark:hover:text-white transition-colors group"
-            >
+                class="flex items-center gap-3 px-3 py-2.5 rounded-lg text-slate-600 dark:text-slate-400 hover:bg-slate-50 dark:hover:bg-slate-800 hover:text-slate-900 dark:hover:text-white transition-colors group">
                 <span class="material-symbols-outlined text-[24px] fill-1">dashboard</span>
                 <span class="text-sm font-semibold">Dashboard</span>
             </a>
 
             <!-- Orders -->
-            <a
-                [routerLink]="['/dashboard', 'orders']"
-                routerLinkActive="bg-primary/10 text-primary"
+            <a [routerLink]="['/dashboard', 'orders']" routerLinkActive="bg-primary/10 text-primary"
                 [routerLinkActiveOptions]="{ exact: true }"
-                class="flex items-center gap-3 px-3 py-2.5 rounded-lg text-slate-600 dark:text-slate-400 hover:bg-slate-50 dark:hover:bg-slate-800 hover:text-slate-900 dark:hover:text-white transition-colors group"
-            >
+                class="flex items-center gap-3 px-3 py-2.5 rounded-lg text-slate-600 dark:text-slate-400 hover:bg-slate-50 dark:hover:bg-slate-800 hover:text-slate-900 dark:hover:text-white transition-colors group">
                 <span class="material-symbols-outlined text-[24px]">receipt_long</span>
                 <span class="text-sm font-medium">Orders</span>
             </a>
 
             <!-- Products -->
-            <a
-                [routerLink]="['/dashboard', 'products']"
-                routerLinkActive="bg-primary/10 text-primary"
+            <a [routerLink]="['/dashboard', 'products']" routerLinkActive="bg-primary/10 text-primary"
                 [routerLinkActiveOptions]="{ exact: true }"
-                class="flex items-center gap-3 px-3 py-2.5 rounded-lg text-slate-600 dark:text-slate-400 hover:bg-slate-50 dark:hover:bg-slate-800 hover:text-slate-900 dark:hover:text-white transition-colors group"
-            >
+                class="flex items-center gap-3 px-3 py-2.5 rounded-lg text-slate-600 dark:text-slate-400 hover:bg-slate-50 dark:hover:bg-slate-800 hover:text-slate-900 dark:hover:text-white transition-colors group">
                 <span class="material-symbols-outlined text-[24px]">inventory_2</span>
                 <span class="text-sm font-medium">Products</span>
             </a>
 
             <!-- Customers -->
-            <a
-                [routerLink]="['/dashboard', 'customers']"
-                routerLinkActive="bg-primary/10 text-primary"
+            <a [routerLink]="['/dashboard', 'customers']" routerLinkActive="bg-primary/10 text-primary"
                 [routerLinkActiveOptions]="{ exact: true }"
-                class="flex items-center gap-3 px-3 py-2.5 rounded-lg text-slate-600 dark:text-slate-400 hover:bg-slate-50 dark:hover:bg-slate-800 hover:text-slate-900 dark:hover:text-white transition-colors group"
-            >
+                class="flex items-center gap-3 px-3 py-2.5 rounded-lg text-slate-600 dark:text-slate-400 hover:bg-slate-50 dark:hover:bg-slate-800 hover:text-slate-900 dark:hover:text-white transition-colors group">
                 <span class="material-symbols-outlined text-[24px]">group</span>
                 <span class="text-sm font-medium">Customers</span>
             </a>
 
             <!-- Analytics -->
-            <a
-                [routerLink]="['/dashboard', 'analytics']"
-                routerLinkActive="bg-primary/10 text-primary"
+            <a [routerLink]="['/dashboard', 'analytics']" routerLinkActive="bg-primary/10 text-primary"
                 [routerLinkActiveOptions]="{ exact: true }"
-                class="flex items-center gap-3 px-3 py-2.5 rounded-lg text-slate-600 dark:text-slate-400 hover:bg-slate-50 dark:hover:bg-slate-800 hover:text-slate-900 dark:hover:text-white transition-colors group"
-            >
+                class="flex items-center gap-3 px-3 py-2.5 rounded-lg text-slate-600 dark:text-slate-400 hover:bg-slate-50 dark:hover:bg-slate-800 hover:text-slate-900 dark:hover:text-white transition-colors group">
                 <span class="material-symbols-outlined text-[24px]">analytics</span>
                 <span class="text-sm font-medium">Analytics</span>
             </a>
 
             <!-- Settings -->
-            <a
-                [routerLink]="['/dashboard', 'settings']"
-                routerLinkActive="bg-primary/10 text-primary"
+            <a [routerLink]="['/dashboard', 'settings']" routerLinkActive="bg-primary/10 text-primary"
                 [routerLinkActiveOptions]="{ exact: true }"
-                class="flex items-center gap-3 px-3 py-2.5 rounded-lg text-slate-600 dark:text-slate-400 hover:bg-slate-50 dark:hover:bg-slate-800 hover:text-slate-900 dark:hover:text-white transition-colors group"
-            >
+                class="flex items-center gap-3 px-3 py-2.5 rounded-lg text-slate-600 dark:text-slate-400 hover:bg-slate-50 dark:hover:bg-slate-800 hover:text-slate-900 dark:hover:text-white transition-colors group">
                 <span class="material-symbols-outlined text-[24px]">settings</span>
                 <span class="text-sm font-medium">Settings</span>
             </a>
+
         </nav>
+        <!-- <div class="p-4  ">
+            <button
+                class="w-full flex items-center justify-between px-4 py-2  hover:bg-slate-200 text-slate-700 rounded-xl transition-all group"
+                onclick="document.documentElement.classList.toggle('dark')">
+                <div class="flex items-center gap-2">
+                    <span class="material-symbols-outlined text-lg">dark_mode</span>
+                    <span class="text-sm font-bold">Dark Mode</span>
+                </div>
+                <div class="w-10 h-5 bg-slate-300 rounded-full relative">
+                    <div
+                        class="absolute left-1 top-1 bg-white size-3 rounded-full transition-all group-active:translate-x-5">
+                    </div>
+                </div>
+            </button>
+        </div> -->
     </div>
 
     <!-- Support + Logout -->
@@ -88,6 +86,7 @@
                 class="w-full py-1.5 bg-white dark:bg-slate-700 text-slate-900 dark:text-white text-xs font-semibold border border-slate-200 dark:border-slate-600 rounded shadow-sm hover:shadow transition-shadow">
                 Contact Support
             </button>
+
         </div>
 
         <button
@@ -96,4 +95,5 @@
             <span>Logout</span>
         </button>
     </div>
+
 </aside>

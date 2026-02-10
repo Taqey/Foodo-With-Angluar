@@ -1,0 +1,24 @@
+<div
+    class="flex items-center justify-between bg-white dark:bg-surface-dark p-4 rounded-xl border border-[#dae3e7] dark:border-gray-700 shadow-sm gap-4">
+
+    <div class="relative flex-1 max-w-md">
+        <span class="absolute left-3 top-1/2 -translate-y-1/2 text-[#5e808d] material-symbols-outlined">search</span>
+        <input
+            class="w-full h-11 pl-10 pr-4 rounded-lg border border-[#dae3e7] dark:border-gray-600 bg-white dark:bg-gray-800 text-[#101618] dark:text-white focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary placeholder-[#5e808d] text-sm"
+            placeholder="Search by name, email, or phone..." />
+    </div>
+
+    <div class="relative flex-1 max-w-xs">
+        <span class="absolute left-3 top-1/2 -translate-y-1/2 text-[#5e808d] material-symbols-outlined">sort</span>
+        <select
+            class="w-full h-11 pl-10 pr-8 rounded-lg border border-[#dae3e7] dark:border-gray-600 bg-white dark:bg-gray-800 text-[#101618] dark:text-white focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary text-sm appearance-none cursor-pointer">
+            <option value="date_desc">Last Order: Newest First</option>
+            <option value="date_asc">Last Order: Oldest First</option>
+            <option value="spend_desc">Total Spend: High to Low</option>
+            <option value="spend_asc">Total Spend: Low to High</option>
+        </select>
+        <span
+            class="absolute right-3 top-1/2 -translate-y-1/2 text-[#5e808d] material-symbols-outlined pointer-events-none">expand_more</span>
+    </div>
+
+</div>

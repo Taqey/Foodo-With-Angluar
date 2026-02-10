@@ -1,28 +1,6 @@
-<div class="flex-1 overflow-y-auto p-8 scroll-smooth">
-    <div class="max-w-[1200px] mx-auto flex flex-col gap-6">
-
-        <!-- Page Header -->
-        <div class="flex flex-wrap items-center justify-between gap-4">
-            <div>
-                <h1 class="text-2xl font-bold text-slate-900 dark:text-white">Orders</h1>
-                <p class="text-slate-500 dark:text-slate-400 text-sm mt-1">Manage and track your incoming
-                    orders.</p>
-            </div>
-            <div class="flex gap-3">
-                <button
-                    class="flex items-center gap-2 px-4 py-2 bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 rounded-lg text-sm font-medium text-slate-700 dark:text-slate-200 hover:bg-slate-50 dark:hover:bg-slate-700 transition-colors shadow-sm">
-                    <span class="material-symbols-outlined text-[18px]">download</span>
-                    Export Data
-                </button>
-                <button
-                    class="flex items-center gap-2 px-4 py-2 bg-primary hover:bg-sky-600 text-white rounded-lg text-sm font-medium shadow-sm shadow-sky-200 dark:shadow-none transition-colors">
-                    <span class="material-symbols-outlined text-[18px]">add</span>
-                    Create Order
-                </button>
-            </div>
-        </div>
-        <app-merchant-order-stats></app-merchant-order-stats>
-
-
-        <app-order-filter></app-order-filter>
-        <app-order-table></app-order-table>
+<main class="flex-1 overflow-y-auto p-8 scroll-smooth flex flex-col gap-6">
+    <app-dashboard-header title="Orders"  , description="Manage and track your incoming orders."></app-dashboard-header>
+    <app-merchant-order-stats></app-merchant-order-stats>
+    <app-order-filter></app-order-filter>
+    <app-order-table></app-order-table>
+</main>

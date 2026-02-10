@@ -1,16 +1,14 @@
-<div class="max-w-6xl mx-auto flex flex-col gap-12">
-                    <section class="flex flex-col gap-6">
-                        <div class="flex items-center justify-between">
-                            <h3 class="text-xl font-bold text-slate-900 dark:text-white">Business Snapshot</h3>
-                        </div>
-                        <!-- Stats Cards -->
-                        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
-                            <app-revenue-snapshot></app-revenue-snapshot>
-                            <app-active-orders-snapshot></app-active-orders-snapshot>
-                            <app-pending-orders-snapshot></app-pending-orders-snapshot>
-                            <app-customers-snapshot></app-customers-snapshot>
-                        </div>
-                        <app-weekly-chart-snapshot></app-weekly-chart-snapshot>
+<main class="flex-1 overflow-y-auto p-8 scroll-smooth flex flex-col gap-6">
+        <app-dashboard-header title="Bussiness Insights"   description="Track key performance metrics and gain actionable insights to grow your business.">
+></app-dashboard-header>
+        <!-- Stats Cards -->
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
+            <app-revenue-snapshot></app-revenue-snapshot>
+            <app-active-orders-snapshot></app-active-orders-snapshot>
+            <app-pending-orders-snapshot></app-pending-orders-snapshot>
+            <app-customers-snapshot></app-customers-snapshot>
+        </div>
+        <app-weekly-chart-snapshot></app-weekly-chart-snapshot>
 
-                    </section>
-                
+    </main>
+    

@@ -1,0 +1,181 @@
+<div
+    class="overflow-hidden rounded-xl border border-slate-200 bg-white shadow-sm dark:border-slate-800 dark:bg-card-dark">
+    <div class="overflow-x-auto">
+        <table class="w-full text-left text-sm">
+            <thead class="border-b border-slate-200 bg-slate-50 dark:border-slate-800 dark:bg-slate-900/50">
+                <tr>
+                    <th class="px-6 py-4 font-semibold text-slate-900 dark:text-white">Order ID</th>
+                    <th class="px-6 py-4 font-semibold text-slate-900 dark:text-white">Date &amp;
+                        Time</th>
+                    <th class="px-6 py-4 font-semibold text-slate-900 dark:text-white">Customer</th>
+                    <th class="px-6 py-4 font-semibold text-slate-900 dark:text-white">Items Summary
+                    </th>
+                    <th class="px-6 py-4 font-semibold text-slate-900 dark:text-white">Total</th>
+                    <th class="px-6 py-4 font-semibold text-slate-900 dark:text-white">Status</th>
+                    <th class="px-6 py-4 text-right font-semibold text-slate-900 dark:text-white">
+                        Action</th>
+                </tr>
+            </thead>
+            <tbody class="divide-y divide-slate-200 dark:divide-slate-800">
+                <!-- Row 1: Pending -->
+                <tr class="group hover:bg-blue-50/50 dark:hover:bg-slate-800/50 transition-colors">
+                    <td class="px-6 py-4 font-medium text-primary cursor-pointer hover:underline">
+                        #ORD-001</td>
+                    <td class="px-6 py-4 text-slate-500 dark:text-slate-400">Oct 24, 10:23 AM</td>
+                    <td class="px-6 py-4">
+                        <div class="flex items-center gap-3">
+                            <div class="bg-center bg-no-repeat aspect-square bg-cover rounded-full size-8"
+                                data-alt="Avatar of John Doe"
+                                style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuCj7eEe3BwZjQuVuPmQnI_Mn5U5q7boeOBCcNuTJMvKL6Hu09eSwyWK8t2bUsXzP8vdh0Nd5rERSGaZcohD9etUBsmNPbboGWG_ipjjmk_N39aBmDaGK9VEcctGhdUxJRB0KivG63lI4lwjvO1QIp-23CZZQJLg1IV_mQPZD0j4u9zkX2L8cUIMeV_VfoDwrmk3rpLTO2O7kcRZt4k627NoyoLmLPKzESEtr87b1wBRWoYGLsUmJmCUwWiCiDTkY2W0N8kCRQdclYM");'>
+                            </div>
+                            <span class="font-medium text-slate-900 dark:text-white">John Doe</span>
+                        </div>
+                    </td>
+                    <td class="px-6 py-4 text-slate-600 dark:text-slate-300 max-w-[200px] truncate">
+                        2x Classic Burger, 1x Coke</td>
+                    <td class="px-6 py-4 font-semibold text-slate-900 dark:text-white">$24.50</td>
+                    <td class="px-6 py-4">
+                        <span
+                            class="inline-flex items-center gap-1.5 rounded-full bg-orange-100 px-3 py-1 text-xs font-semibold text-orange-700 dark:bg-orange-500/20 dark:text-orange-400">
+                            <span class="h-1.5 w-1.5 rounded-full bg-orange-500"></span>
+                            Pending
+                        </span>
+                    </td>
+                    <td class="px-6 py-4 text-right">
+                        <button
+                            class="rounded-lg p-2 text-slate-400 hover:bg-slate-100 hover:text-primary dark:hover:bg-slate-700 transition-colors">
+                            <span class="material-symbols-outlined text-[20px]">more_vert</span>
+                        </button>
+                    </td>
+                </tr>
+                <!-- Row 2: Preparing -->
+                <tr class="group hover:bg-blue-50/50 dark:hover:bg-slate-800/50 transition-colors">
+                    <td class="px-6 py-4 font-medium text-primary cursor-pointer hover:underline">
+                        #ORD-002</td>
+                    <td class="px-6 py-4 text-slate-500 dark:text-slate-400">Oct 24, 10:15 AM</td>
+                    <td class="px-6 py-4">
+                        <div class="flex items-center gap-3">
+                            <div class="bg-center bg-no-repeat aspect-square bg-cover rounded-full size-8"
+                                data-alt="Avatar of Sarah Smith"
+                                style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuCn3DC6Y1C914dFkEVZ3Uf3tUJKvu0eTchrZx22v2nPNDFppLlB6D1JlfiE7n0lizTeZr2Z3IXYClQ3Pm7qj2G4zKmk2RvHWo-bUfQzEC_rR0TMMCy1DaJUxORAM6FGIG7Ac-Y8KVuPjboY8agL891i6qEJ_o_ekkBwewPZowe0MXy6Iq3pdbnPnHD9C2e6fjdSMBzrNEgt9pBM00XXFy2Sn5d2hDMq2pcOLC7py_l7AEn_-p3WyGZ3rCYb6gyBwdGT9YpOHf4bUp8");'>
+                            </div>
+                            <span class="font-medium text-slate-900 dark:text-white">Sarah
+                                Smith</span>
+                        </div>
+                    </td>
+                    <td class="px-6 py-4 text-slate-600 dark:text-slate-300 max-w-[200px] truncate">
+                        1x Pizza Large (Pepperoni)</td>
+                    <td class="px-6 py-4 font-semibold text-slate-900 dark:text-white">$18.00</td>
+                    <td class="px-6 py-4">
+                        <span
+                            class="inline-flex items-center gap-1.5 rounded-full bg-primary/10 px-3 py-1 text-xs font-semibold text-primary dark:bg-primary/20 dark:text-primary">
+                            <span class="h-1.5 w-1.5 rounded-full bg-primary animate-pulse"></span>
+                            Preparing
+                        </span>
+                    </td>
+                    <td class="px-6 py-4 text-right">
+                        <button
+                            class="rounded-lg p-2 text-slate-400 hover:bg-slate-100 hover:text-primary dark:hover:bg-slate-700 transition-colors">
+                            <span class="material-symbols-outlined text-[20px]">more_vert</span>
+                        </button>
+                    </td>
+                </tr>
+                <!-- Row 3: Ready -->
+                <tr class="group hover:bg-blue-50/50 dark:hover:bg-slate-800/50 transition-colors">
+                    <td class="px-6 py-4 font-medium text-primary cursor-pointer hover:underline">
+                        #ORD-003</td>
+                    <td class="px-6 py-4 text-slate-500 dark:text-slate-400">Oct 24, 09:55 AM</td>
+                    <td class="px-6 py-4">
+                        <div class="flex items-center gap-3">
+                            <div class="bg-center bg-no-repeat aspect-square bg-cover rounded-full size-8"
+                                data-alt="Avatar of Mike Ross"
+                                style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuBVp6hrafcnJlwwMnrn2I8azYBhjHVwOm912JWBPtZztwpyzyqZnPXaBXcv3haWFQQY-GgwphpocAiaVv3ZkKpGkcTmVn3ypTZoMayG8ZcM8H9SyjQ3r-S7S0jvD9FTJwUyUqwJDhMsPENnTFGuAm8hHeDipmE_3HKlxAvfDgRLTaKiB1Rrimi7pUh5gJLzxPG1XEAqapSiYO5D8AXht_d_GVrMyaVgjIhDTX1L84JmVeO8qZzZU76eDZoh0NOsCanPTnDqZjAZT5k");'>
+                            </div>
+                            <span class="font-medium text-slate-900 dark:text-white">Mike
+                                Ross</span>
+                        </div>
+                    </td>
+                    <td class="px-6 py-4 text-slate-600 dark:text-slate-300 max-w-[200px] truncate">
+                        3x Spicy Tacos, 1x Guacamole</td>
+                    <td class="px-6 py-4 font-semibold text-slate-900 dark:text-white">$15.50</td>
+                    <td class="px-6 py-4">
+                        <span
+                            class="inline-flex items-center gap-1.5 rounded-full bg-green-100 px-3 py-1 text-xs font-semibold text-green-700 dark:bg-green-500/20 dark:text-green-400">
+                            <span class="material-symbols-outlined text-[14px]">check</span>
+                            Ready
+                        </span>
+                    </td>
+                    <td class="px-6 py-4 text-right">
+                        <button
+                            class="rounded-lg p-2 text-slate-400 hover:bg-slate-100 hover:text-primary dark:hover:bg-slate-700 transition-colors">
+                            <span class="material-symbols-outlined text-[20px]">more_vert</span>
+                        </button>
+                    </td>
+                </tr>
+                <!-- Row 4: Delivered -->
+                <tr class="group hover:bg-blue-50/50 dark:hover:bg-slate-800/50 transition-colors">
+                    <td class="px-6 py-4 font-medium text-primary cursor-pointer hover:underline">
+                        #ORD-004</td>
+                    <td class="px-6 py-4 text-slate-500 dark:text-slate-400">Oct 24, 09:30 AM</td>
+                    <td class="px-6 py-4">
+                        <div class="flex items-center gap-3">
+                            <div class="bg-center bg-no-repeat aspect-square bg-cover rounded-full size-8"
+                                data-alt="Avatar of Emily Clark"
+                                style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuCaM6nsTxceghI_2Qos0QULg9hT5UqZnGiOybtwctzfOhs2HF1g-lrcmZYupTqUrG5hJAw-SpeDerG7FKDuaIHlen_30YsCPzbEtABUoZiBz5njmiG_RidT1loGmht7LhwcxTiYV3lbNrYDkJhg3bJPLE2tQ0tktdtpSznt-dw5dsxVnDNxPnK8Al1CCpjssmMaldlJk2UgX_FA9Bk2I47DB5PO8fvXmTvzOgDEz9eH-6S1GD-vuOFXlxt0P55_uLK9S5Vz2t0EI84");'>
+                            </div>
+                            <span class="font-medium text-slate-900 dark:text-white">Emily
+                                Clark</span>
+                        </div>
+                    </td>
+                    <td class="px-6 py-4 text-slate-600 dark:text-slate-300 max-w-[200px] truncate">
+                        1x Caesar Salad, 1x Water</td>
+                    <td class="px-6 py-4 font-semibold text-slate-900 dark:text-white">$12.00</td>
+                    <td class="px-6 py-4">
+                        <span
+                            class="inline-flex items-center gap-1.5 rounded-full bg-slate-100 px-3 py-1 text-xs font-semibold text-slate-600 dark:bg-slate-700/50 dark:text-slate-300">
+                            Delivered
+                        </span>
+                    </td>
+                    <td class="px-6 py-4 text-right">
+                        <button
+                            class="rounded-lg p-2 text-slate-400 hover:bg-slate-100 hover:text-primary dark:hover:bg-slate-700 transition-colors">
+                            <span class="material-symbols-outlined text-[20px]">more_vert</span>
+                        </button>
+                    </td>
+                </tr>
+                <!-- Row 5: Delivered -->
+                <tr class="group hover:bg-blue-50/50 dark:hover:bg-slate-800/50 transition-colors">
+                    <td class="px-6 py-4 font-medium text-primary cursor-pointer hover:underline">
+                        #ORD-005</td>
+                    <td class="px-6 py-4 text-slate-500 dark:text-slate-400">Oct 23, 08:45 PM</td>
+                    <td class="px-6 py-4">
+                        <div class="flex items-center gap-3">
+                            <div
+                                class="flex items-center justify-center rounded-full bg-indigo-100 text-indigo-600 size-8 text-xs font-bold dark:bg-indigo-900 dark:text-indigo-200">
+                                DW
+                            </div>
+                            <span class="font-medium text-slate-900 dark:text-white">David
+                                Wong</span>
+                        </div>
+                    </td>
+                    <td class="px-6 py-4 text-slate-600 dark:text-slate-300 max-w-[200px] truncate">
+                        2x Sushi Platter</td>
+                    <td class="px-6 py-4 font-semibold text-slate-900 dark:text-white">$45.00</td>
+                    <td class="px-6 py-4">
+                        <span
+                            class="inline-flex items-center gap-1.5 rounded-full bg-slate-100 px-3 py-1 text-xs font-semibold text-slate-600 dark:bg-slate-700/50 dark:text-slate-300">
+                            Delivered
+                        </span>
+                    </td>
+                    <td class="px-6 py-4 text-right">
+                        <button
+                            class="rounded-lg p-2 text-slate-400 hover:bg-slate-100 hover:text-primary dark:hover:bg-slate-700 transition-colors">
+                            <span class="material-symbols-outlined text-[20px]">more_vert</span>
+                        </button>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    <!-- Pagination -->
+    <app-pagination></app-pagination>

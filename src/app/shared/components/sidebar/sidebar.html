@@ -1,13 +1,15 @@
 <aside
-    class="w-64 flex-shrink-0 bg-surface-light border-r border-slate-200 dark:bg-surface-dark dark:border-slate-800 flex flex-col justify-between p-4 z-20 h-full">
+    class="w-64 flex-shrink-0 bg-surface-light border-r border-slate-200 dark:bg-surface-dark dark:border-slate-800 flex flex-col justify-between p-4 z-20 h-full ">
 
     <!-- Logo + Nav -->
     <div class="flex flex-col gap-6">
-        <app-logo></app-logo>
+        <div class="flex justify-start px-2 py-2 ">
+            <app-logo></app-logo>
+        </div>
 
         <nav class="flex flex-col gap-1">
             <!-- Dashboard -->
-            <a [routerLink]="['/dashboard']" routerLinkActive="bg-primary/10 text-primary"
+            <a [routerLink]="['/merchant-dashboard']" routerLinkActive="bg-primary/10 text-primary"
                 [routerLinkActiveOptions]="{ exact: true }"
                 class="flex items-center gap-3 px-3 py-2.5 rounded-lg text-slate-600 dark:text-slate-400 hover:bg-slate-50 dark:hover:bg-slate-800 hover:text-slate-900 dark:hover:text-white transition-colors group">
                 <span class="material-symbols-outlined text-[24px] fill-1">dashboard</span>
@@ -15,7 +17,7 @@
             </a>
 
             <!-- Orders -->
-            <a [routerLink]="['/dashboard', 'orders']" routerLinkActive="bg-primary/10 text-primary"
+            <a [routerLink]="['/merchant-dashboard', 'orders']" routerLinkActive="bg-primary/10 text-primary"
                 [routerLinkActiveOptions]="{ exact: true }"
                 class="flex items-center gap-3 px-3 py-2.5 rounded-lg text-slate-600 dark:text-slate-400 hover:bg-slate-50 dark:hover:bg-slate-800 hover:text-slate-900 dark:hover:text-white transition-colors group">
                 <span class="material-symbols-outlined text-[24px]">receipt_long</span>
@@ -23,7 +25,7 @@
             </a>
 
             <!-- Products -->
-            <a [routerLink]="['/dashboard', 'products']" routerLinkActive="bg-primary/10 text-primary"
+            <a [routerLink]="['/merchant-dashboard', 'products']" routerLinkActive="bg-primary/10 text-primary"
                 [routerLinkActiveOptions]="{ exact: true }"
                 class="flex items-center gap-3 px-3 py-2.5 rounded-lg text-slate-600 dark:text-slate-400 hover:bg-slate-50 dark:hover:bg-slate-800 hover:text-slate-900 dark:hover:text-white transition-colors group">
                 <span class="material-symbols-outlined text-[24px]">inventory_2</span>
@@ -31,7 +33,7 @@
             </a>
 
             <!-- Customers -->
-            <a [routerLink]="['/dashboard', 'customers']" routerLinkActive="bg-primary/10 text-primary"
+            <a [routerLink]="['/merchant-dashboard', 'customers']" routerLinkActive="bg-primary/10 text-primary"
                 [routerLinkActiveOptions]="{ exact: true }"
                 class="flex items-center gap-3 px-3 py-2.5 rounded-lg text-slate-600 dark:text-slate-400 hover:bg-slate-50 dark:hover:bg-slate-800 hover:text-slate-900 dark:hover:text-white transition-colors group">
                 <span class="material-symbols-outlined text-[24px]">group</span>
@@ -39,7 +41,7 @@
             </a>
 
             <!-- Analytics -->
-            <a [routerLink]="['/dashboard', 'analytics']" routerLinkActive="bg-primary/10 text-primary"
+            <a [routerLink]="['/merchant-dashboard', 'analytics']" routerLinkActive="bg-primary/10 text-primary"
                 [routerLinkActiveOptions]="{ exact: true }"
                 class="flex items-center gap-3 px-3 py-2.5 rounded-lg text-slate-600 dark:text-slate-400 hover:bg-slate-50 dark:hover:bg-slate-800 hover:text-slate-900 dark:hover:text-white transition-colors group">
                 <span class="material-symbols-outlined text-[24px]">analytics</span>
@@ -47,7 +49,7 @@
             </a>
 
             <!-- Settings -->
-            <a [routerLink]="['/dashboard', 'settings']" routerLinkActive="bg-primary/10 text-primary"
+            <a [routerLink]="['/merchant-dashboard', 'settings']" routerLinkActive="bg-primary/10 text-primary"
                 [routerLinkActiveOptions]="{ exact: true }"
                 class="flex items-center gap-3 px-3 py-2.5 rounded-lg text-slate-600 dark:text-slate-400 hover:bg-slate-50 dark:hover:bg-slate-800 hover:text-slate-900 dark:hover:text-white transition-colors group">
                 <span class="material-symbols-outlined text-[24px]">settings</span>

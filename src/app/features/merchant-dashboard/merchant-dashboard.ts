@@ -9,8 +9,8 @@ import { DashboardHeader } from "./components/dashboard-header/dashboard-header"
 @Component({
   selector: 'app-dashboard',
   imports: [RevenueSnapshot, ActiveOrdersSnapshot, PendingOrdersSnapshot, CustomersSnapshot, WeeklyChartSnapshot, DashboardHeader],
-  templateUrl: './dashboard.html',
-  styleUrl: './dashboard.css',
+  templateUrl: './merchant-dashboard.html',
+  styleUrl: './merchant-dashboard.css',
 })
 export class Dashboard {
 

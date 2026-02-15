@@ -1,8 +1,54 @@
-
-        <!-- Logo & Brand -->
-
-        <!-- Right Navigation Section -->
-        <div class="flex items-center justify-end flex-1 gap-6">
-            <app-auth-buttons *ngIf="!isLoggedIn"></app-auth-buttons>   
-            <app-profile-button *ngIf="isLoggedIn"></app-profile-button>
+<!-- Navbar -->
+<nav class="sticky top-0 z-50 bg-surface-light/90 dark:bg-surface-dark/90  border-gray-100 dark:border-gray-800">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="flex justify-between h-16 md:h-20 items-center">
+            <app-landing-page-links [isLandingPage]="isLandingPage" [isLoggedIn]="isLoggedIn"
+                (toggleMenu)="toggleMenu()"></app-landing-page-links>
         </div>
+    </div>
+</nav>
+
+<!-- Mobile Sidebar Menu -->
+<div *ngIf="isMenuOpen "
+    class="fixed inset-y-0 right-0 w-full max-w-[300px] bg-white z-[70] shadow-2xl md:hidden flex flex-col">
+
+    <!-- Menu Header -->
+    <div class="flex items-center justify-between p-6 border-b border-gray-100">
+        <span class="font-bold text-xl">Menu</span>
+        <button (click)="closeMenu()" class="text-gray-500 hover:text-primary transition-colors">
+            <span class="material-icons-round text-3xl">close</span>
+        </button>
+    </div>
+
+    <!-- Menu Links -->
+    <div class="flex-1 overflow-y-auto py-4 px-6">
+       <nav class="flex flex-col space-y-1">
+  <a routerLink="/" (click)="closeMenu()"
+     routerLinkActive="text-primary font-semibold border-b border-gray-50"
+     [routerLinkActiveOptions]="{exact:true}"
+     class="py-4 hover:text-primary border-b border-gray-50">
+    Home
+  </a>
+  <a routerLink="/restaurants" (click)="closeMenu()"
+     routerLinkActive="text-primary font-semibold border-b border-gray-50"
+     [routerLinkActiveOptions]="{exact:true}"
+     class="py-4 hover:text-primary border-b border-gray-50">
+    Restaurants
+  </a>
+  <a routerLink="/food" (click)="closeMenu()"
+     routerLinkActive="text-primary font-semibold border-b border-gray-50"
+     [routerLinkActiveOptions]="{exact:true}"
+     class="py-4 hover:text-primary border-b border-gray-50">
+    Food
+  </a>
+</nav>
+
+
+        <!-- Auth Section Only in Mobile Sidebar -->
+        <div class="mt-8 space-y-4">
+            <app-auth-buttons *ngIf="!isLoggedIn"></app-auth-buttons>
+            <!-- البروفايل مش موجود هنا -->
+        </div>
+    </div>
+
+</div>

@@ -1,12 +1,12 @@
 import { Component } from '@angular/core';
 import { Navbar } from "../../shared/components/navbar/navbar";
 import { Logo } from "../../shared/components/logo/logo";
-import { LandingLayout } from "../landing-layout/landing-layout";
 import { Footer } from "../../shared/components/footer/footer";
+import { LandingLayout } from '../../layouts/landing-layout/landing-layout';
 
 @Component({
   selector: 'app-landing',
-  imports: [Navbar, Logo, LandingLayout, Footer],
+  imports: [Navbar, Logo, Footer,LandingLayout],
   templateUrl: './landing.html',
   styleUrl: './landing.css',
 })

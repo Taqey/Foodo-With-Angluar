@@ -7,6 +7,9 @@ export interface IProduct {
     name:string;
     description:string;
     price:number;
+    restaurant?:string;
+    rating?:number;
+    
     categories:IProductCategory[];
     attributes:IProducAttribute[];
     images:IProductImage[];

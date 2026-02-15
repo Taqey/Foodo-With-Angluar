@@ -1,6 +1,6 @@
 import { Component,Input,Output,EventEmitter } from '@angular/core';
-import { AuthButtons } from "../shared/components/auth-buttons/auth-buttons";
-import { ProfileButton } from "../shared/components/profile-button/profile-button";
+import { AuthButtons } from '../auth-buttons/auth-buttons';
+import { ProfileButton } from '../profile-button/profile-button';
 import { NgIf } from '@angular/common';
 
 import {  Router, RouterLink, RouterLinkActive } from '@angular/router';

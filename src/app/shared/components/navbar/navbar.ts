@@ -2,8 +2,8 @@ import { Component,Input } from '@angular/core';
 import { AuthButtons } from "../auth-buttons/auth-buttons";
 import { NgIf } from '@angular/common';
 import { ProfileButton } from "../profile-button/profile-button";
-import { Route, Router, RouterLink, RouterLinkActive } from '@angular/router';
-import { LandingPageLinks } from "../../../landing-page-links/landing-page-links";
+import {  RouterLink, RouterLinkActive } from '@angular/router';
+import { LandingPageLinks } from '../landing-page-links/landing-page-links';
 
 @Component({
   selector: 'app-navbar',
@@ -12,7 +12,7 @@ import { LandingPageLinks } from "../../../landing-page-links/landing-page-links
   styleUrl: './navbar.css',
 })
 export class Navbar {
-  constructor(public router: Router) {}
+  // constructor(public router: Router) {}
 
   isLoggedIn : boolean=false;
   @Input() isLandingPage:boolean=true;

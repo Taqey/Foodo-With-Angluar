@@ -12,6 +12,7 @@ import { Analytics } from './features/merchant-dashboard/analytics/analytics';
 import { Restaurant } from './pages/restaurant/restaurant';
 import { Food } from './pages/food/food';
 import { LandingLayout } from './layouts/landing-layout/landing-layout';
+import { ProductDetail } from './product-detail/product-detail';
 
 export const routes: Routes = [
   {
@@ -31,10 +32,10 @@ export const routes: Routes = [
     path: '',
     component: LandingLayout,
     children: [
-          { path: '', component: Landing },  // هنا الصفحة الرئيسية
-
+      { path: '', component: Landing }, // هنا الصفحة الرئيسية
       { path: 'restaurants', component: Restaurant },
       { path: 'food', component: Food },
+      { path: 'food/:id', component: ProductDetail },
     ],
   },
   { path: 'register', component: Register },

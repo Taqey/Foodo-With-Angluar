@@ -9,12 +9,35 @@ import { CategoryModal } from "../category-modal/category-modal";
   styleUrl: './food-filter.css',
 })
 export class FoodFilter {
-  foodTypes = [
-    'Burger','Pizza','Pasta','Sandwich','Grill','FriedChicken',
-    'Seafood','Salad','Soup','Dessert','IceCream','Juice',
-    'Coffee','Beverage','Appetizer','MainCourse','SideDish',
-    'Shawarma','Kebab','Sushi','Tacos','Noodles','RiceDishes','Pastry','Breakfast'
-  ];
+foodTypes = [
+  { name: 'All', icon: 'grid_view' },
+  { name: 'Burger', icon: 'lunch_dining' },
+  { name: 'Pizza', icon: 'local_pizza' },
+  { name: 'Pasta', icon: 'ramen_dining' },
+  { name: 'Sandwich', icon: 'fastfood' },
+  { name: 'Grill', icon: 'whatshot' },
+  { name: 'FriedChicken', icon: 'restaurant_menu' },
+  { name: 'Seafood', icon: 'set_meal' },
+  { name: 'Salad', icon: 'eco' },
+  { name: 'Soup', icon: 'soup_kitchen' },
+  { name: 'Dessert', icon: 'icecream' },
+  { name: 'IceCream', icon: 'icecream' },
+  { name: 'Juice', icon: 'local_drink' },
+  { name: 'Coffee', icon: 'coffee' },
+  { name: 'Beverage', icon: 'local_cafe' },
+  { name: 'Appetizer', icon: 'restaurant' },
+  { name: 'MainCourse', icon: 'dinner_dining' },
+  { name: 'SideDish', icon: 'food_bank' },
+  { name: 'Shawarma', icon: 'takeout_dining' },
+  { name: 'Kebab', icon: 'outdoor_grill' },
+  { name: 'Sushi', icon: 'ramen_dining' },
+  { name: 'Tacos', icon: 'emoji_food_beverage' },
+  { name: 'Noodles', icon: 'ramen_dining' },
+  { name: 'RiceDishes', icon: 'rice_bowl' },
+  { name: 'Pastry', icon: 'bakery_dining' },
+  { name: 'Breakfast', icon: 'free_breakfast' }
+];
+
 
   mainFoods = this.foodTypes.slice(0, 6);
 
@@ -28,9 +51,10 @@ export class FoodFilter {
   closeModal() {
     this.modalOpen = false;
   }
+onSelectFood(food: { name: string; icon: string }) {
+  this.selectedFood = food;
+  this.closeModal();
+}
 
-  onSelectFood(food: string) {
-    this.selectedFood = food;
-    this.closeModal();
-  }
+
 }

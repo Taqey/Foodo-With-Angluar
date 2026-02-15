@@ -1,0 +1,211 @@
+    <main     class="flex-1 min-h-screen w-full overflow-y-auto p-8 scroll-smooth flex flex-col gap-6
+           bg-background-light dark:bg-background-dark text-[#101618] dark:text-white ">
+
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <nav aria-label="Breadcrumb" class="flex mb-8 text-sm text-gray-500">
+                <ol class="inline-flex items-center space-x-1 md:space-x-3">
+                    <li class="inline-flex items-center">
+                        <a class="hover:text-primary" routerLink="/">Home</a>
+                    </li>
+                    <li>
+                        <div class="flex items-center">
+                            <span class="material-icons-round text-base mx-1 text-gray-400">chevron_right</span>
+                            <a class="hover:text-primary" routerLink="/restaurants">Restaurant</a>
+                        </div>
+                    </li>
+                    <li aria-current="page">
+                        <div class="flex items-center">
+                            <span class="material-icons-round text-base mx-1 text-gray-400">chevron_right</span>
+                            <span class="text-gray-900 dark:text-white font-medium">Truffle Beef Burger</span>
+                        </div>
+                    </li>
+                </ol>
+            </nav>
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-start">
+                <div class="space-y-4">
+                    <div
+                        class="relative aspect-square rounded-3xl overflow-hidden shadow-2xl border border-gray-100 dark:border-gray-800">
+                        <img alt="Truffle Beef Burger" class="w-full h-full object-cover"
+                            src="https://lh3.googleusercontent.com/aida-public/AB6AXuDGi0xc1DIwJBPDTSN5dQN6xPxXsx0NF6n76fTGEWUlQSVhlmlnZPgMGRfjtsZqr8ssg3wpnakMUU2iJDUyOx2atR_aynUQi2jYrqw9i261QG5Q1ymyWjVEZPmOhnEplHOXNOsv0JUCtNK0O_EYPrnbtnN-GsxbXE2R_RLu0VPoc2IOkErHAjXE9RQyq3Q0LgM4bLM0NOfNOd4nqvRGgnPsUPgdXIL8LS2Oaxmfle6CzZmfFD3fwRKmw0_KlhNmkeP03sWCe7zPu6w" />
+                        <button
+                            class="absolute top-6 right-6 bg-white/90 dark:bg-surface-dark/90 p-3 rounded-full shadow-lg text-red-500 hover:scale-110 transition-transform">
+                            <span class="material-icons-round">favorite</span>
+                        </button>
+                    </div>
+                    <div class="grid grid-cols-4 gap-4">
+                        <div class="aspect-square rounded-xl overflow-hidden cursor-pointer ring-2 ring-primary">
+                            <img alt="View 1" class="w-full h-full object-cover"
+                                src="https://lh3.googleusercontent.com/aida-public/AB6AXuDGi0xc1DIwJBPDTSN5dQN6xPxXsx0NF6n76fTGEWUlQSVhlmlnZPgMGRfjtsZqr8ssg3wpnakMUU2iJDUyOx2atR_aynUQi2jYrqw9i261QG5Q1ymyWjVEZPmOhnEplHOXNOsv0JUCtNK0O_EYPrnbtnN-GsxbXE2R_RLu0VPoc2IOkErHAjXE9RQyq3Q0LgM4bLM0NOfNOd4nqvRGgnPsUPgdXIL8LS2Oaxmfle6CzZmfFD3fwRKmw0_KlhNmkeP03sWCe7zPu6w" />
+                        </div>
+                        <div
+                            class="aspect-square rounded-xl overflow-hidden cursor-pointer hover:opacity-80 transition-opacity">
+                            <img alt="View 2" class="w-full h-full object-cover"
+                                src="https://lh3.googleusercontent.com/aida-public/AB6AXuAiHbFeKUw5cLdML9tIU4tL-Oqo_pzwIv4RwCgDQqW-XBCpRws_xZuHpy7qreDR8mIi2vd1ObxpaLTVoZeo0tGylYTG4XRMraMmpc8KNVbuKSPRisvCXHFbtBVLS7AEAq5VvzKrosLxF7iU93I5UU-_CHv9rXYYWpOFjIQU2XtLp2VokzQJKQZNgWhJd_mn-aX5FgopMRd6w7WBViCccdIKCa3RyILA3VOlE6KwG_8p6BWbUhrY9-S9eTXF3UZbxXDr4a1B9djdkVE" />
+                        </div>
+                        <div
+                            class="aspect-square rounded-xl overflow-hidden cursor-pointer hover:opacity-80 transition-opacity">
+                            <img alt="View 3" class="w-full h-full object-cover"
+                                src="https://lh3.googleusercontent.com/aida-public/AB6AXuDGi0xc1DIwJBPDTSN5dQN6xPxXsx0NF6n76fTGEWUlQSVhlmlnZPgMGRfjtsZqr8ssg3wpnakMUU2iJDUyOx2atR_aynUQi2jYrqw9i261QG5Q1ymyWjVEZPmOhnEplHOXNOsv0JUCtNK0O_EYPrnbtnN-GsxbXE2R_RLu0VPoc2IOkErHAjXE9RQyq3Q0LgM4bLM0NOfNOd4nqvRGgnPsUPgdXIL8LS2Oaxmfle6CzZmfFD3fwRKmw0_KlhNmkeP03sWCe7zPu6w" />
+                        </div>
+                        <div
+                            class="aspect-square rounded-xl overflow-hidden cursor-pointer hover:opacity-80 transition-opacity relative">
+                            <img alt="View 4" class="w-full h-full object-cover"
+                                src="https://lh3.googleusercontent.com/aida-public/AB6AXuCK_Nnlk5u7eokYzx9PVa2zGZVIQpcY2kd765tSc21VmxYh2mKf6_3Hu6E02fgnBiePxpg0Q-tUXJx2FC15Qqjn2hN3fEIvNHGW3uzDVmRlKPIdEKo_Cex9HXcLLbZjClRulrOeP1Kf6mUeMsbS2gKuXQSJ_gQXPGh89pvnd5P7LFTt9j12wIwijIfzIZvZrmvKZrwhTDJq9dAYT2od9O8vD7IY2dJ9YPHAcPq0mQ3LcI1cZ_VEJbHkXeS5hRKkDoCnb7Wt0rg8YKs" />
+                            <div
+                                class="absolute inset-0 bg-black/40 flex items-center justify-center text-white font-bold">
+                                +2</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="flex flex-col h-full">
+                    <div class="flex items-center gap-2 mb-4">
+                        <span
+                            class="px-3 py-1 rounded-full bg-blue-50 dark:bg-blue-900/30 text-primary text-xs font-bold uppercase tracking-wider">Bestseller</span>
+                        <div class="flex items-center text-yellow-400">
+                            <span class="material-icons-round text-sm">star</span>
+                            <span class="text-sm font-bold ml-1 text-gray-900 dark:text-white">4.9</span>
+                            <span class="text-sm text-gray-500 ml-1 font-normal">(1.2k+ reviews)</span>
+                        </div>
+                    </div>
+                    <h1 class="font-display text-4xl font-bold text-gray-900 dark:text-white mb-2 leading-tight">
+                        Signature Truffle Beef Burger</h1>
+                    <p class="text-gray-500 dark:text-gray-400 text-lg mb-6">Juicy wagyu beef patty, black truffle
+                        aioli, wild mushrooms, and melted aged cheddar on a toasted brioche bun.</p>
+                    <div class="flex items-center gap-6 mb-8 py-6 border-y border-gray-100 dark:border-gray-800">
+                        <div>
+                            <span class="text-3xl font-bold text-primary">$18.50</span>
+                            <span class="text-gray-400 line-through ml-2 font-medium">$22.00</span>
+                        </div>
+                        <div class="flex items-center bg-gray-100 dark:bg-gray-800 rounded-xl p-1">
+                            <button
+                                class="w-10 h-10 flex items-center justify-center hover:bg-white dark:hover:bg-surface-dark rounded-lg transition-colors text-gray-600 dark:text-gray-300">
+                                <span class="material-icons-round">remove</span>
+                            </button>
+                            <span class="w-12 text-center font-bold text-lg">1</span>
+                            <button
+                                class="w-10 h-10 flex items-center justify-center hover:bg-white dark:hover:bg-surface-dark rounded-lg transition-colors text-primary">
+                                <span class="material-icons-round">add</span>
+                            </button>
+                        </div>
+                    </div>
+                    <div class="space-y-6 mb-10">
+                        <div>
+                            <h3 class="text-sm font-bold text-gray-900 dark:text-white uppercase tracking-widest mb-3">
+                                Ingredients</h3>
+                            <p class="text-gray-600 dark:text-gray-400 leading-relaxed">
+                                Wagyu Beef, Black Truffle Oil, Shiitake Mushrooms, Portobello Mushrooms, Aged White
+                                Cheddar, Brioche Bun, Arugula, Caramelized Onions, Sea Salt, Black Pepper.
+                            </p>
+                        </div>
+                        <div>
+                            <h3 class="text-sm font-bold text-gray-900 dark:text-white uppercase tracking-widest mb-3">
+                                Nutritional Info</h3>
+                            <div class="grid grid-cols-4 gap-4">
+                                <div class="bg-gray-50 dark:bg-gray-800/50 p-3 rounded-xl text-center">
+                                    <p class="text-[10px] text-gray-500 uppercase font-bold">Calories</p>
+                                    <p class="text-lg font-bold text-gray-900 dark:text-white">740</p>
+                                </div>
+                                <div class="bg-gray-50 dark:bg-gray-800/50 p-3 rounded-xl text-center">
+                                    <p class="text-[10px] text-gray-500 uppercase font-bold">Protein</p>
+                                    <p class="text-lg font-bold text-gray-900 dark:text-white">32g</p>
+                                </div>
+                                <div class="bg-gray-50 dark:bg-gray-800/50 p-3 rounded-xl text-center">
+                                    <p class="text-[10px] text-gray-500 uppercase font-bold">Fats</p>
+                                    <p class="text-lg font-bold text-gray-900 dark:text-white">45g</p>
+                                </div>
+                                <div class="bg-gray-50 dark:bg-gray-800/50 p-3 rounded-xl text-center">
+                                    <p class="text-[10px] text-gray-500 uppercase font-bold">Carbs</p>
+                                    <p class="text-lg font-bold text-gray-900 dark:text-white">28g</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="mt-auto">
+                        <button
+                            class="w-full bg-primary hover:bg-primary-dark text-white py-5 rounded-2xl font-bold text-lg shadow-xl shadow-primary/30 transition-all flex items-center justify-center gap-3">
+                            <span class="material-icons-round">shopping_bag</span>
+                            Add to Cart - $18.50
+                        </button>
+                        <p class="text-center text-xs text-gray-400 mt-4 flex items-center justify-center gap-1">
+                            <span class="material-icons-round text-sm">schedule</span>
+                            Estimated delivery time: 25-35 mins
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <div class="mt-24">
+                <div class="flex items-center justify-between mb-8">
+                    <h2 class="text-2xl font-display font-bold text-gray-900 dark:text-white">Complete your meal</h2>
+                    <a class="text-primary font-semibold hover:underline flex items-center gap-1" href="#">
+                        View menu <span class="material-icons-round">arrow_forward</span>
+                    </a>
+                </div>
+                <div class="grid grid-cols-2 md:grid-cols-4 gap-6">
+                    <div class="group cursor-pointer">
+                        <div
+                            class="relative aspect-square rounded-2xl overflow-hidden mb-4 bg-gray-100 dark:bg-gray-800">
+                            <img alt="Truffle Fries"
+                                class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
+                                src="https://lh3.googleusercontent.com/aida-public/AB6AXuAiHbFeKUw5cLdML9tIU4tL-Oqo_pzwIv4RwCgDQqW-XBCpRws_xZuHpy7qreDR8mIi2vd1ObxpaLTVoZeo0tGylYTG4XRMraMmpc8KNVbuKSPRisvCXHFbtBVLS7AEAq5VvzKrosLxF7iU93I5UU-_CHv9rXYYWpOFjIQU2XtLp2VokzQJKQZNgWhJd_mn-aX5FgopMRd6w7WBViCccdIKCa3RyILA3VOlE6KwG_8p6BWbUhrY9-S9eTXF3UZbxXDr4a1B9djdkVE" />
+                            <div class="absolute bottom-2 right-2">
+                                <button
+                                    class="w-8 h-8 rounded-full bg-white dark:bg-surface-dark shadow-md flex items-center justify-center text-primary">
+                                    <span class="material-icons-round text-xl">add</span>
+                                </button>
+                            </div>
+                        </div>
+                        <h4 class="font-bold text-gray-900 dark:text-white truncate">Parmesan Truffle Fries</h4>
+                        <p class="text-primary font-bold mt-1">$6.50</p>
+                    </div>
+                    <div class="group cursor-pointer">
+                        <div
+                            class="relative aspect-square rounded-2xl overflow-hidden mb-4 bg-gray-100 dark:bg-gray-800">
+                            <img alt="Soda"
+                                class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
+                                src="https://lh3.googleusercontent.com/aida-public/AB6AXuDGi0xc1DIwJBPDTSN5dQN6xPxXsx0NF6n76fTGEWUlQSVhlmlnZPgMGRfjtsZqr8ssg3wpnakMUU2iJDUyOx2atR_aynUQi2jYrqw9i261QG5Q1ymyWjVEZPmOhnEplHOXNOsv0JUCtNK0O_EYPrnbtnN-GsxbXE2R_RLu0VPoc2IOkErHAjXE9RQyq3Q0LgM4bLM0NOfNOd4nqvRGgnPsUPgdXIL8LS2Oaxmfle6CzZmfFD3fwRKmw0_KlhNmkeP03sWCe7zPu6w" />
+                            <div class="absolute bottom-2 right-2">
+                                <button
+                                    class="w-8 h-8 rounded-full bg-white dark:bg-surface-dark shadow-md flex items-center justify-center text-primary">
+                                    <span class="material-icons-round text-xl">add</span>
+                                </button>
+                            </div>
+                        </div>
+                        <h4 class="font-bold text-gray-900 dark:text-white truncate">Classic Lemon Soda</h4>
+                        <p class="text-primary font-bold mt-1">$3.00</p>
+                    </div>
+                    <div class="group cursor-pointer">
+                        <div
+                            class="relative aspect-square rounded-2xl overflow-hidden mb-4 bg-gray-100 dark:bg-gray-800">
+                            <img alt="Coleslaw"
+                                class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
+                                src="https://lh3.googleusercontent.com/aida-public/AB6AXuCK_Nnlk5u7eokYzx9PVa2zGZVIQpcY2kd765tSc21VmxYh2mKf6_3Hu6E02fgnBiePxpg0Q-tUXJx2FC15Qqjn2hN3fEIvNHGW3uzDVmRlKPIdEKo_Cex9HXcLLbZjClRulrOeP1Kf6mUeMsbS2gKuXQSJ_gQXPGh89pvnd5P7LFTt9j12wIwijIfzIZvZrmvKZrwhTDJq9dAYT2od9O8vD7IY2dJ9YPHAcPq0mQ3LcI1cZ_VEJbHkXeS5hRKkDoCnb7Wt0rg8YKs" />
+                            <div class="absolute bottom-2 right-2">
+                                <button
+                                    class="w-8 h-8 rounded-full bg-white dark:bg-surface-dark shadow-md flex items-center justify-center text-primary">
+                                    <span class="material-icons-round text-xl">add</span>
+                                </button>
+                            </div>
+                        </div>
+                        <h4 class="font-bold text-gray-900 dark:text-white truncate">House Made Coleslaw</h4>
+                        <p class="text-primary font-bold mt-1">$4.50</p>
+                    </div>
+                    <div class="group cursor-pointer">
+                        <div
+                            class="relative aspect-square rounded-2xl overflow-hidden mb-4 bg-gray-100 dark:bg-gray-800">
+                            <img alt="Dessert"
+                                class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
+                                src="https://lh3.googleusercontent.com/aida-public/AB6AXuBMHc9R_Ppk9D_Ni4uy4JxwmPsyrdAoFywI3NEdY969NTsu8ryZZyoipSiZ8g7pORRubEeBQqVLpsvXL3w6XO9EXRwu3xgrLyKWyFy57RSt3NYAjirQ5VVd770wRekLhed3-oy12N5LQMmVvfv7WZ0w4Llm-IwBdK51_S2uc9_zZPIQHY_TJyc-MUykj8YSUva-Bbwvp0YQIyyaWNVf6YMXqezvRRlwjfDzklaNxtGgPGj2GGljqQYuRy8A-sA14-HPQvOXqDiK8HA" />
+                            <div class="absolute bottom-2 right-2">
+                                <button
+                                    class="w-8 h-8 rounded-full bg-white dark:bg-surface-dark shadow-md flex items-center justify-center text-primary">
+                                    <span class="material-icons-round text-xl">add</span>
+                                </button>
+                            </div>
+                        </div>
+                        <h4 class="font-bold text-gray-900 dark:text-white truncate">Chocolate Lava Cake</h4>
+                        <p class="text-primary font-bold mt-1">$8.00</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>

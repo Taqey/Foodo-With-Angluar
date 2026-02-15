@@ -1,16 +1,16 @@
 <!-- Main scrollable buttons -->
-<div class="flex items-center gap-3 overflow-x-auto hide-scrollbar pb-2">
+<div class="flex items-center gap-3 overflow-x-auto hide-scrollbar pb-2 ">
 
-  <button *ngFor="let food of mainFoods"
-          (click)="onSelectFood(food)"
+  <button *ngFor="let restaurant of mainCategories"
+          (click)="onSelectCategory(restaurant)"
           [ngClass]="{
-            'bg-primary text-white shadow-lg shadow-primary/20': selectedFood === food,
-            'bg-white dark:bg-gray-800 border border-gray-100 dark:border-gray-700 text-gray-700 dark:text-gray-300 hover:border-primary hover:text-primary shadow-sm': selectedFood !== food
+            'bg-primary text-white shadow-lg shadow-primary/20': selectedCategory === restaurant,
+            'bg-white dark:bg-gray-800 border border-gray-100 dark:border-gray-700 text-gray-700 dark:text-gray-300 hover:border-primary hover:text-primary shadow-sm': selectedCategory !== restaurant
           }"
           class="flex items-center gap-2 px-4 py-2 rounded-2xl font-medium whitespace-nowrap transition-transform active:scale-95">
 
-    <span class="material-symbols-outlined text-xl">{{ food.icon }}</span>
-    {{ food.name }}
+    <span class="material-symbols-outlined text-xl">{{ restaurant.icon }}</span>
+    {{ restaurant.name }}
 
   </button>
 
@@ -27,8 +27,8 @@
 <app-category-modal
   *ngIf="modalOpen"
   [isOpen]="modalOpen"
-  [categories]="foodTypes"
-  [selected]="selectedFood"
+  [categories]="restaurantCategories"
+  [selected]="selectedCategory"
   (close)="closeModal()"
-  (select)="onSelectFood($event)">
+  (select)="onSelectCategory($event)">
 </app-category-modal>

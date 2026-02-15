@@ -1,34 +1,28 @@
-<div *ngIf="isOpen"
-     class="fixed inset-0 z-50 flex items-center justify-center">
-
+<div class="fixed inset-0 z-50 flex items-center justify-center">
   <!-- Overlay -->
-  <div class="absolute inset-0 bg-black/40"
-       (click)="closeModal()"></div>
+  <div class="absolute inset-0 bg-black/40" (click)="closeModal()"></div>
 
-  <!-- Modal -->
-  <div class="relative bg-white w-[90%] max-w-lg rounded-xl shadow-xl p-6">
-
+  <!-- Modal content -->
+  <div class="relative bg-white dark:bg-gray-800 w-[90%] max-w-lg rounded-2xl shadow-xl p-4">
     <div class="flex justify-between items-center mb-4">
-      <h2 class="text-lg font-semibold">Choose Category</h2>
-      <button (click)="closeModal()"
-              class="text-slate-500 hover:text-black text-xl">
-        ✕
-      </button>
+      <h2 class="text-lg font-semibold text-gray-900 dark:text-white">Choose Category</h2>
+      <button (click)="closeModal()" class="text-gray-500 dark:text-gray-300 hover:text-black text-xl">✕</button>
     </div>
 
+    <!-- Grid of buttons -->
     <div class="grid grid-cols-2 sm:grid-cols-3 gap-3 max-h-80 overflow-y-auto">
-
       <button *ngFor="let cat of categories"
               (click)="selectCategory(cat)"
               [ngClass]="{
-                'bg-slate-900 text-white': selected === cat,
-                'bg-slate-100 hover:bg-slate-200': selected !== cat
+                'bg-primary text-white shadow-lg shadow-primary/20': selected?.name === cat.name,
+                'bg-white dark:bg-gray-800 border border-gray-100 dark:border-gray-700 text-gray-700 dark:text-gray-300 hover:border-primary hover:text-primary shadow-sm': selected?.name !== cat.name
               }"
-              class="rounded-lg px-3 py-2 text-sm font-medium transition-colors">
-        {{ cat }}
+              class="flex flex-col items-center justify-center rounded-2xl px-3 py-2 font-medium text-sm transition-transform active:scale-95">
+
+        <span class="material-symbols-outlined text-xl mb-1">{{ cat.icon }}</span>
+        {{ cat.name }}
+
       </button>
-
     </div>
-
   </div>
 </div>

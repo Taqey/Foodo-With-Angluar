@@ -1,8 +1,8 @@
 import { Component } from '@angular/core';
 import { DashboardHeader } from "../components/dashboard-header/dashboard-header";
-import { FoodFilter } from "../../../shared/components/food-filter/food-filter";
+import { FoodFilter } from '../../catalog/components/food-filter/food-filter';
 import { Pagination } from "../../../shared/components/pagination/pagination";
-import { IProduct } from '../models/iproduct';
+import { IProduct } from '../../../core/models/iproduct';
 
 @Component({
   selector: 'app-products',

@@ -1,14 +1,14 @@
 import { Component, Input } from '@angular/core';
-import { FoodFilter } from '../../shared/components/food-filter/food-filter';
-import { Search } from '../../shared/components/search/search';
-import { Sort, SortOption } from '../../shared/components/sort/sort';
-import { Pagination } from '../../shared/components/pagination/pagination';
-import { IProduct } from '../../features/merchant-dashboard/models/iproduct';
+import { FoodFilter } from '../components/food-filter/food-filter';
+import { Search } from '../../../shared/components/search/search';
+import { Sort, SortOption } from '../../../shared/components/sort/sort';
+import { Pagination } from '../../../shared/components/pagination/pagination';
+import { IProduct } from '../../../core/models/iproduct';
 import { RouterLink } from '@angular/router';
 
 @Component({
   selector: 'app-food',
-  imports: [FoodFilter, Search, Sort, Pagination,RouterLink],
+  imports: [FoodFilter, Search, Sort, Pagination, RouterLink],
   templateUrl: './food.html',
   styleUrl: './food.css',
 })
@@ -22,14 +22,14 @@ export class Food {
     { name: 'Price (High → Low)', value: 'price_desc' },
   ];
 
-    getMainImage(product: IProduct): string {
-  const main = product.images.find(img => img.isMain);
-  return main?.imageUrl || product.images[0]?.imageUrl || '';
-}
+  getMainImage(product: IProduct): string {
+    const main = product.images.find(img => img.isMain);
+    return main?.imageUrl || product.images[0]?.imageUrl || '';
+  }
 
-getCategories(product: IProduct): string {
-  return product.categories.map(c => c.category).join(' • ');
-}
+  getCategories(product: IProduct): string {
+    return product.categories.map(c => c.category).join(' • ');
+  }
 
   productlist: IProduct[];
   constructor() {

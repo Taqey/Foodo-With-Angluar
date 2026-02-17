@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, RouterLink } from "@angular/router";
-import { Products } from '../features/merchant-dashboard/products/products';
-import { IProduct } from '../features/merchant-dashboard/models/iproduct';
+import { Products } from '../../merchant-dashboard/products/products';
+import { IProduct } from '../../../core/models/iproduct';
 
 @Component({
   selector: 'app-product-detail',

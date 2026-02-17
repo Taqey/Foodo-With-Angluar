@@ -1,7 +1,7 @@
 import { Routes } from '@angular/router';
-import { Landing } from './pages/landing/landing';
-import { Register } from './pages/register/register';
-import { Login } from './pages/login/login';
+import { Landing } from './features/landing/landing';
+import { Register } from './features/auth/register/register';
+import { Login } from './features/auth/login/login';
 import { DashboardLayout } from './layouts/dashboard-layout/dashboard-layout';
 import { Dashboard } from './features/merchant-dashboard/merchant-dashboard';
 import { Orders } from './features/merchant-dashboard/orders/orders';
@@ -9,10 +9,10 @@ import { Products } from './features/merchant-dashboard/products/products';
 import { Customers } from './features/merchant-dashboard/customers/customers';
 import { Settings } from './features/merchant-dashboard/settings/settings';
 import { Analytics } from './features/merchant-dashboard/analytics/analytics';
-import { Restaurant } from './pages/restaurant/restaurant';
-import { Food } from './pages/food/food';
+import { Restaurant } from './features/catalog/restaurant/restaurant';
+import { Food } from './features/catalog/food/food';
 import { LandingLayout } from './layouts/landing-layout/landing-layout';
-import { ProductDetail } from './product-detail/product-detail';
+import { ProductDetail } from './features/catalog/product-detail/product-detail';
 
 export const routes: Routes = [
   {

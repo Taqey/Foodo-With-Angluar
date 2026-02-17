@@ -3,7 +3,7 @@ import { AuthButtons } from "../auth-buttons/auth-buttons";
 import { NgIf } from '@angular/common';
 import { ProfileButton } from "../profile-button/profile-button";
 import {  RouterLink, RouterLinkActive } from '@angular/router';
-import { LandingPageLinks } from '../landing-page-links/landing-page-links';
+import { LandingPageLinks } from '../../../features/landing/components/landing-page-links';
 
 @Component({
   selector: 'app-navbar',

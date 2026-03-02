@@ -16,4 +16,5 @@ export class LandingPageLinks {
 @Input() isLandingPage: boolean = false;
 @Input() isLoggedIn: boolean = false;
 @Output() toggleMenu = new EventEmitter<void>();
+
 }

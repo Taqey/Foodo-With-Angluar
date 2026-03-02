@@ -1,39 +1,50 @@
-            <!-- Desktop Navigation -->
-            <div class="hidden md:flex space-x-8 items-center">
+<!-- Desktop Navigation -->
+<div class="hidden md:flex space-x-8 items-center">
 
-                <ng-container *ngIf="isLandingPage">
-                    <a routerLink="/" routerLinkActive="text-gray-900 dark:text-white border-b-2 border-primary font-medium transition"    [routerLinkActiveOptions]="{ exact: true }"
-class="text-gray-600 dark:text-gray-300 hover:text-primary font-medium transition" >
-                        Home    
-                    </a>
-                    <a routerLink="/restaurants" routerLinkActive="text-gray-900 dark:text-white border-b-2 border-primary font-medium transition"   [routerLinkActiveOptions]="{ exact: true }"
-class="text-gray-600 dark:text-gray-300 hover:text-primary font-medium transition">
-                        Restaurants
-                    </a>
-                    <a routerLink="/food" routerLinkActive="text-gray-900 dark:text-white border-b-2 border-primary font-medium transition"  [routerLinkActiveOptions]="{ exact: true }"
- class="text-gray-600 dark:text-gray-300 hover:text-primary font-medium transition">
-                        Food
-                    </a>
-                    <div class="border-l border-gray-300 dark:border-gray-700 h-6 mx-2"></div>
-                </ng-container>
+    <ng-container *ngIf="isLandingPage">
+        <a routerLink="/"
+            routerLinkActive="text-gray-900 dark:text-white border-b-2 border-primary font-medium transition"
+            [routerLinkActiveOptions]="{ exact: true }"
+            class="relative text-gray-600 dark:text-gray-300 hover:text-primary font-medium transition
+          after:absolute after:left-0 after:-bottom-0.5 after:w-0 after:h-0.5 after:bg-primary after:transition-all hover:after:w-full">
+            Home
+        </a>
 
+        <a routerLink="/restaurants"
+            routerLinkActive="text-gray-900 dark:text-white border-b-2 border-primary font-medium transition"
+            [routerLinkActiveOptions]="{ exact: true }"
+            class="relative text-gray-600 dark:text-gray-300 hover:text-primary font-medium transition
+          after:absolute after:left-0 after:-bottom-0.5 after:w-0 after:h-0.5 after:bg-primary after:transition-all hover:after:w-full">
+            Restaurants
+        </a>
 
-                <!-- Desktop Auth/Profile Buttons -->
-                <app-auth-buttons *ngIf="!isLoggedIn"></app-auth-buttons>
-                <app-profile-button *ngIf="isLoggedIn"></app-profile-button>
+        <a routerLink="/food"
+            routerLinkActive="text-gray-900 dark:text-white border-b-2 border-primary font-medium transition"
+            [routerLinkActiveOptions]="{ exact: true }"
+            class="relative text-gray-600 dark:text-gray-300 hover:text-primary font-medium transition
+          after:absolute after:left-0 after:-bottom-0.5 after:w-0 after:h-0.5 after:bg-primary after:transition-all hover:after:w-full">
+            Food
+        </a>
 
-            </div>
+        <div class="border-l border-gray-300 dark:border-gray-700 h-6 mx-2"></div>
+    </ng-container>
 
-            <!-- Mobile Hamburger & Profile -->
-            <div class="md:hidden flex items-center gap-3">
+    <!-- Desktop Auth/Profile Buttons -->
+    <app-auth-buttons *ngIf="!isLoggedIn"></app-auth-buttons>
+    <app-profile-button *ngIf="isLoggedIn"></app-profile-button>
 
-                <!-- Profile Button -->
-                <app-profile-button *ngIf="isLoggedIn"></app-profile-button>
+</div>
 
-                <!-- Hamburger Button يظهر بس لو isLandingPage=true -->
-                <button *ngIf="isLandingPage" (click)="toggleMenu.emit()"
-                    class="text-gray-600 dark:text-gray-300 hover:text-primary focus:outline-none">
-                    <span class="material-icons-round text-3xl">menu</span>
-                </button>
+<!-- Mobile Hamburger & Profile -->
+<div class="md:hidden flex items-center gap-3">
 
-            </div>
+    <!-- Profile Button -->
+    <app-profile-button *ngIf="isLoggedIn"></app-profile-button>
+
+    <!-- Hamburger Button يظهر بس لو isLandingPage=true -->
+    <button *ngIf="isLandingPage" (click)="toggleMenu.emit()"
+        class="text-gray-600 dark:text-gray-300 hover:text-primary focus:outline-none">
+        <span class="material-icons-round text-3xl">menu</span>
+    </button>
+
+</div>

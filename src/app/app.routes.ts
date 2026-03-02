@@ -13,6 +13,7 @@ import { Restaurant } from './features/catalog/restaurant/restaurant';
 import { Food } from './features/catalog/food/food';
 import { LandingLayout } from './layouts/landing-layout/landing-layout';
 import { ProductDetail } from './features/catalog/product-detail/product-detail';
+import { RestaurantDetail } from './features/catalog/restaurant-detail/restaurant-detail';
 
 export const routes: Routes = [
   {
@@ -36,6 +37,7 @@ export const routes: Routes = [
       { path: 'restaurants', component: Restaurant },
       { path: 'food', component: Food },
       { path: 'food/:id', component: ProductDetail },
+      { path: 'restaurants/:id', component: RestaurantDetail },
     ],
   },
   { path: 'register', component: Register },

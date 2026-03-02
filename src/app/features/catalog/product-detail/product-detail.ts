@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute, RouterLink } from "@angular/router";
-import { Products } from '../../merchant-dashboard/products/products';
+import { ActivatedRoute, RouterLink } from '@angular/router';
 import { IProduct } from '../../../core/models/iproduct';
+import { ProductService } from '../../../core/services/ProductService/product-service';
 
 @Component({
   selector: 'app-product-detail',
@@ -9,17 +9,37 @@ import { IProduct } from '../../../core/models/iproduct';
   templateUrl: './product-detail.html',
   styleUrl: './product-detail.css',
 })
-export class ProductDetail {
-  // product: IProduct | undefined;
+export class ProductDetail implements OnInit {
 
-  // constructor(private route: ActivatedRoute, private productsComp: Products) {}
+  product: IProduct | null = null;
+  loading = true;
+  error = false;
 
-  // ngOnInit(): void {
-  //   const id = this.route.snapshot.paramMap.get('id');
+  constructor(
+    private productService: ProductService,
+    private route: ActivatedRoute,
+  ) {}
 
-  //   if (id) {
-  //     // جلب المنتج من الـ productlist
-  //     this.product = this.productsComp.productlist.find(p => p.id === +id);
-  //   }
-  // }
+  ngOnInit(): void {
+    const idParam = this.route.snapshot.paramMap.get('id');
+
+    if (!idParam) {
+      this.error = true;
+      this.loading = false;
+      return;
+    }
+
+    const id = Number(idParam);
+
+    this.productService.getProductById(id).subscribe({
+      next: (res) => {
+        this.product = res;
+        this.loading = false;
+      },
+      error: () => {
+        this.error = true;
+        this.loading = false;
+      }
+    });
+  }
 }

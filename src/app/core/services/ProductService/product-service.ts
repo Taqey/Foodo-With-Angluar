@@ -85,5 +85,5 @@ export class ProductService {
 //   measurementUnit: string;
 // }
 export const environment = {
-  apiUrl: 'https://localhost:7098/api'
+  apiUrl: 'https://foodo.runasp.net/api'
 };

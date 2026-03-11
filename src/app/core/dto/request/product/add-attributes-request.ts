@@ -1,6 +1,6 @@
-import { IProductAttribute } from "../../../models/iproduct-attribute";
+import { attributes } from "../../../models/iattributes";
 
 export interface AddAttributesRequest {
-      attributes: IProductAttribute[];
+      attributes: attributes[];
 
 }

@@ -1,0 +1,54 @@
+<main class="flex-grow flex items-center justify-center px-4 py-12">
+  <div class="max-w-md w-full text-center" data-purpose="error-container">
+    
+    <div class="relative w-64 h-64 mx-auto mb-8 animate-float">
+      <div class="absolute inset-0 bg-blue-50 rounded-full"></div>
+
+      <svg
+        class="relative z-10 w-full h-full text-brand-blue"
+        fill="none"
+        viewBox="0 0 24 24"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <path
+          d="M12 8V12L15 15M21 12C21 16.9706 16.9706 21 12 21C7.02944 21 3 16.9706 3 12C3 7.02944 7.02944 3 12 3C16.9706 3 21 7.02944 21 12Z"
+          stroke="currentColor"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          stroke-width="2"
+        ></path>
+        <path
+          d="M17 2L19 4M7 2L5 4"
+          stroke="currentColor"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          stroke-width="2"
+        ></path>
+      </svg>
+
+      <div class="absolute top-1/4 -left-4 w-12 h-1 bg-brand-blue/20 rounded-full"></div>
+      <div class="absolute top-1/2 -left-8 w-16 h-1 bg-brand-blue/10 rounded-full"></div>
+      <div class="absolute bottom-1/4 -right-4 w-12 h-1 bg-brand-blue/20 rounded-full"></div>
+    </div>
+
+    <h1 class="text-3xl font-extrabold text-gray-900 mb-4">
+      Whoa there, speed racer!
+    </h1>
+
+    <p class="text-gray-600 text-lg mb-8 leading-relaxed">
+      You're sending requests faster than our fastest driver.
+      Please take a quick breather and try again in a moment.
+    </p>
+
+    <button
+      class="inline-block w-full sm:w-auto bg-brand-blue text-white text-lg font-bold px-10 py-4 rounded-xl hover:bg-brand-dark transition-all transform hover:scale-[1.02] active:scale-[0.98] shadow-xl shadow-brand-blue/30"
+      (click)="reload()"
+    >
+      Try Again
+    </button>
+
+    <p class="mt-12 text-gray-400 text-sm font-medium uppercase tracking-widest">
+      Error 429: Too Many Requests
+    </p>
+  </div>
+</main>

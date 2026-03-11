@@ -1,9 +1,9 @@
-import { IProductAttribute } from "../../../models/iproduct-attribute";
+import { attributes } from "../../../models/iattributes";
 
 export interface CreateProductRequest {
       productName: string;
   productDescription: string;
   price: string;
-      attributes: IProductAttribute[];
+      attributes: attributes[];
   categories: number[];
 }

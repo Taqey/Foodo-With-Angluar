@@ -2,7 +2,7 @@
 <nav class="sticky top-0 z-50 bg-surface-light/90 dark:bg-surface-dark/90  border-gray-100 dark:border-gray-800">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div class="flex justify-between h-16 md:h-20 items-center">
-            <app-landing-page-links [isLandingPage]="isLandingPage" [isLoggedIn]="isLoggedIn"
+            <app-landing-page-links (logoutClicked)="logout()" [isLandingPage]="isLandingPage" [isLoggedIn]="isLoggedIn"
                 (toggleMenu)="toggleMenu()"></app-landing-page-links>
         </div>
     </div>

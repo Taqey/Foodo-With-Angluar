@@ -3,7 +3,7 @@
     <div
         class="flex items-center justify-between bg-white dark:bg-surface-dark p-4 rounded-xl border border-[#dae3e7] dark:border-gray-700 shadow-sm gap-4">
         <app-search search="Search for food...."></app-search>
-        <app-sort [sort]="sort"></app-sort>
+        <app-sort [sort]="sort" (SelectedSort)="OnSortChange($event)"></app-sort>
     </div>
     <app-food-filter (FoodSelected)="onCategorySelected($event)"></app-food-filter>
 

@@ -1,75 +1,42 @@
-<footer *ngIf="router.url!=='/login'&&router.url!=='/register'" class="bg-white dark:bg-[#0f1e23] border-t border-[#f0f3f5] dark:border-gray-800 mt-auto">
-    <div class="max-w-[1280px] mx-auto px-4 sm:px-10 lg:px-40 py-16">
-        <div class="grid grid-cols-1 md:grid-cols-4 gap-12 mb-12">
-            <!-- Branding -->
-            <div class="space-y-4">
-                <div class="flex items-center gap-2">
-                    <div class="flex items-center gap-2 shrink-0">
-                        <div class="text-primary flex items-center">
-                            <span class="material-symbols-outlined text-3xl"
-                                style="font-variation-settings: 'FILL' 1;">moped</span>
-                        </div>
-                    </div>
-                    <h2 class="text-[#111618] dark:text-white text-lg font-bold">Foodo</h2>
-                </div>
-                <p class="text-gray-500 text-sm leading-relaxed">Delivering joy to your doorstep, one meal at a time.
-                    The world's finest culinary experiences, curated just for you.</p>
+<footer class="bg-gray-900 text-white pt-16 pb-10 mt-20">
+<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+<div class="grid grid-cols-1 md:grid-cols-4 gap-12 mb-16">
+<div class="col-span-1 md:col-span-1">
+<div class="flex items-center gap-2 mb-6">
+    <span class="material-symbols-outlined text-5xl" style="font-variation-settings: 'FILL' 1;">
+      moped
+    </span>
+<span class="font-display font-bold text-2xl tracking-tight">Food<span class="text-primary">o</span></span>
+</div>
+<p class="text-gray-400 text-sm leading-relaxed">Bringing the best local food directly to your doorstep. Fast, fresh, and reliable.</p>
+</div>
+<div>
+<h4 class="font-bold mb-6 text-white uppercase text-xs tracking-widest">Quick Links</h4>
+<ul class="space-y-4 text-gray-400 text-sm">
+<li><a class="hover:text-primary transition-colors" href="#">About Us</a></li>
+<li><a class="hover:text-primary transition-colors" href="#">Restaurants</a></li>
+<li><a class="hover:text-primary transition-colors" href="#">Join as a Partner</a></li>
+</ul>
+</div>
+<div>
+<h4 class="font-bold mb-6 text-white uppercase text-xs tracking-widest">Support</h4>
+<ul class="space-y-4 text-gray-400 text-sm">
+<li><a class="hover:text-primary transition-colors" href="#">Help Center</a></li>
+<li><a class="hover:text-primary transition-colors" href="#">Terms of Service</a></li>
+<li><a class="hover:text-primary transition-colors" href="#">Privacy Policy</a></li>
+</ul>
+</div>
+<div>
+<h4 class="font-bold mb-6 text-white uppercase text-xs tracking-widest">Connect</h4>
+<div class="flex gap-4">
+<a class="w-10 h-10 rounded-full bg-gray-800 flex items-center justify-center hover:bg-primary transition-colors" href="#"><span class="material-icons-round text-lg">facebook</span></a>
+<a class="w-10 h-10 rounded-full bg-gray-800 flex items-center justify-center hover:bg-primary transition-colors" href="#"><span class="material-icons-round text-lg">camera_alt</span></a>
+<a class="w-10 h-10 rounded-full bg-gray-800 flex items-center justify-center hover:bg-primary transition-colors" href="#"><span class="material-icons-round text-lg">alternate_email</span></a>
+</div>
+</div>
+</div>
+<div class="border-t border-gray-800 pt-8 text-center text-gray-500 text-xs">
+                © 2023 Foodo. All rights reserved.
             </div>
-            <!-- Column 1 -->
-            <div>
-                <h4 class="font-bold mb-6">Explore</h4>
-                <ul class="space-y-4 text-sm text-[#5f808c] dark:text-gray-400">
-                    <li><a class="hover:text-primary transition-colors" href="#">Home</a></li>
-                    <li><a class="hover:text-primary transition-colors" href="#">Browse Restaurants</a></li>
-                    <li><a class="hover:text-primary transition-colors" href="#">Trending Now</a></li>
-                    <li><a class="hover:text-primary transition-colors" href="#">Special Offers</a></li>
-                </ul>
-            </div>
-            <!-- Column 2 -->
-            <div>
-                <h4 class="font-bold mb-6">Support</h4>
-                <ul class="space-y-4 text-sm text-[#5f808c] dark:text-gray-400">
-                    <li><a class="hover:text-primary transition-colors" href="#">Help Center</a></li>
-                    <li><a class="hover:text-primary transition-colors" href="#">Track Order</a></li>
-                    <li><a class="hover:text-primary transition-colors" href="#">Shipping Info</a></li>
-                    <li><a class="hover:text-primary transition-colors" href="#">Contact Us</a></li>
-                </ul>
-            </div>
-            <!-- Social Links -->
-            <div>
-                <h4 class="font-bold mb-6">Connect</h4>
-                <div class="flex gap-4 mb-6">
-                    <a class="bg-gray-100 dark:bg-gray-800 p-2 rounded-lg text-gray-600 dark:text-gray-300 hover:text-primary transition-colors"
-                        href="#">
-                        <span class="material-symbols-outlined text-lg">social_leaderboard</span>
-                    </a>
-                    <a class="bg-gray-100 dark:bg-gray-800 p-2 rounded-lg text-gray-600 dark:text-gray-300 hover:text-primary transition-colors"
-                        href="#">
-                        <span class="material-symbols-outlined text-lg">chat_bubble</span>
-                    </a>
-                    <a class="bg-gray-100 dark:bg-gray-800 p-2 rounded-lg text-gray-600 dark:text-gray-300 hover:text-primary transition-colors"
-                        href="#">
-                        <span class="material-symbols-outlined text-lg">alternate_email</span>
-                    </a>
-                </div>
-                <div class="flex flex-col gap-3">
-                    <div
-                        class="h-10 w-32 bg-gray-200 dark:bg-gray-800 rounded-md flex items-center justify-center text-[10px] text-gray-500">
-                        App Store</div>
-                    <div
-                        class="h-10 w-32 bg-gray-200 dark:bg-gray-800 rounded-md flex items-center justify-center text-[10px] text-gray-500">
-                        Google Play</div>
-                </div>
-            </div>
-        </div>
-        <div
-            class="pt-8 border-t border-[#f0f3f5] dark:border-gray-800 flex flex-col md:flex-row justify-between items-center gap-6 text-sm text-[#5f808c]">
-            <p>© 2023 Foodo Inc. All rights reserved.</p>
-            <div class="flex gap-6">
-                <a class="hover:text-primary" href="#">Privacy Policy</a>
-                <a class="hover:text-primary" href="#">Terms of Service</a>
-                <a class="hover:text-primary" href="#">Cookie Settings</a>
-            </div>
-        </div>
-    </div>
+</div>
 </footer>

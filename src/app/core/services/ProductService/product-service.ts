@@ -26,9 +26,9 @@ export class ProductService {
     pageNumber?: number,
     pageSize?: number,
     categoryId?: number,
-    restaurantId?: string,
     orderBy?: number,
     orderingDirection?: number,
+    restaurantId?: string,
   ): Observable<IPaginatedResponse<IProduct>> {
       let params = new HttpParams();
 
@@ -36,8 +36,8 @@ export class ProductService {
   if (pageSize != null) params = params.set('pageSize', pageSize.toString());
   if (categoryId != null && categoryId!=0) params = params.set('categoryId', categoryId.toString());
   if (restaurantId) params = params.set('restaurantId', restaurantId);
-  if (orderBy != null) params = params.set('orderBy', orderBy.toString());
-  if (orderingDirection != null) params = params.set('orderingDirection', orderingDirection.toString());
+  if (orderBy != null) params = params.set('orderBy', orderBy);
+  if (orderingDirection != null) params = params.set('orderingDirection', orderingDirection);
 
   // استدعاء الـ API
   return this._http.get<IPaginatedResponse<IProduct>>(this.baseUrl, { params });  }
@@ -85,5 +85,5 @@ export class ProductService {
 //   measurementUnit: string;
 // }
 export const environment = {
-  apiUrl: 'https://foodo.runasp.net/api'
+  apiUrl: 'https://localhost:7098/api'
 };

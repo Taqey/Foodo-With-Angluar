@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import { Component, EventEmitter, Input, Output, output } from '@angular/core';
 
 @Component({
   selector: 'app-sort',
@@ -8,7 +8,11 @@ import { Component, Input } from '@angular/core';
 })
 export class Sort {
   @Input() sort!: SortOption[];
-
+  @Output() SelectedSort = new EventEmitter<string>();
+  OnSortChange(event: Event) {
+    const value = (event.target as HTMLSelectElement).value;
+    this.SelectedSort.emit(value)
+  }
 }
 export interface SortOption {
   name: string;

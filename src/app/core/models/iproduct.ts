@@ -1,35 +1,18 @@
-import { IProductAttribute } from './iproduct-attribute';
-import { IProductCategory } from './iproduct-category';
-import { IProductImage } from './iproduct-image';
+import { attributes } from "./iattributes";
+import { ProductDetailAttributeDto } from "./iproduct-detail-attribute-dto";
+import { ProductPhotosDto } from "./iproduct-photos-dto";
 
-/**
- * MerchantProductDto
- */
+
+
 export interface IProduct {
     price?: number;
     storeName:String;
     productCategories?: string[] | null;
     productDescription?: null | string;
     productDetailAttributes?: ProductDetailAttributeDto[] | null;
+    attributes:attributes[]|null
     productId?: number;
     productName?: null | string;
     urls?: ProductPhotosDto[] | null;
 }
 
-/**
- * ProductDetailAttributeDto
- */
-export interface ProductDetailAttributeDto {
-    attributeName?: null | string;
-    attributeValue?: null | string;
-    id?: number;
-    measurementUnit?: null | string;
-}
-
-/**
- * ProductPhotosDto
- */
-export interface ProductPhotosDto {
-    isMain?: boolean;
-    url?: null | string;
-}

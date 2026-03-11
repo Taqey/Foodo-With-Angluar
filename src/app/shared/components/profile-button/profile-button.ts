@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, EventEmitter, Output } from '@angular/core';
 
 @Component({
   selector: 'app-profile-button',
@@ -7,5 +7,9 @@ import { Component } from '@angular/core';
   styleUrl: './profile-button.css',
 })
 export class ProfileButton {
+  @Output() logoutClicked = new EventEmitter<void>();
+    logout() {
+    this.logoutClicked.emit(); 
+  }
 
 }

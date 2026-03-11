@@ -1,21 +1,63 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs/internal/Observable';
+import { ApiResponse } from '../../models/api-response';
+import { JwtDto } from '../../models/jwt-dto';
+import { environment } from '../ProductService/product-service';
+import { jwtDecode } from 'jwt-decode';
+import { tap } from 'rxjs';
+  
 
 @Injectable({
   providedIn: 'root',
 })
 export class AuthenticationService {
-    private baseUrl = '/api/Authentication';
-    constructor(private http: HttpClient) {}
+  private baseUrl = `${environment.apiUrl}/Authentication`;
+  constructor(private http: HttpClient) {}
 
   // Login
-  login(email: string, password: string): Observable<any> {
+  login(email: string, password: string): Observable<ApiResponse<JwtDto>> {
     const formData = new FormData();
     formData.append('Email', email);
     formData.append('Password', password);
 
-    return this.http.post(`${this.baseUrl}/login`, formData);
+    return this.http.post<ApiResponse<JwtDto>>(`${this.baseUrl}/login`, formData);
+  }
+  logout(): void {
+    localStorage.removeItem('token');
+    sessionStorage.removeItem('token');
+  }
+  setToken(token: string, remember: boolean): void {
+    if (remember) {
+      localStorage.setItem('token', token);
+    } else {
+      sessionStorage.setItem('token', token);
+    }
+  }
+getUserRole(): string | null {
+
+  const token = localStorage.getItem('token') || sessionStorage.getItem('token');
+  if (!token) return null;
+
+  const decodedToken: any = jwtDecode(token);
+
+  const role = decodedToken[
+    'http://schemas.microsoft.com/ws/2008/06/identity/claims/role'
+  ];
+
+
+
+  return role || null;
+}
+  isAuthenticated(): boolean {
+    const token = localStorage.getItem('token') || sessionStorage.getItem('token');
+    if (!token) return false;
+    const decodedToken: any = jwtDecode(token);
+    const currentTime = Math.floor(Date.now() / 1000);
+    return decodedToken.exp > currentTime;
+  }
+  getToken(): string | null {
+    return localStorage.getItem('token') || sessionStorage.getItem('token');
   }
 
   // Register Customer
@@ -69,9 +111,17 @@ export class AuthenticationService {
   }
 
   // Refresh Token
-  refreshToken(): boolean | any {
-    // تحديث التوكن
-  }
+ refreshToken(): Observable<{ accessToken: string }> {
+    // backend هيتعامل مع الـ refresh token اللي في الكوكيز
+    return this.http.post<{ accessToken: string }>(
+      `${this.baseUrl}/refresh-token`,
+      {}
+    ).pipe(
+      tap(res => {
+        // حفظ الـ access token الجديد
+        this.setToken(res.accessToken, true); // فرضنا دائمًا في localStorage
+      })
+    );}
 
   // Verify Email Request
   verifyEmailRequest(): boolean | any {

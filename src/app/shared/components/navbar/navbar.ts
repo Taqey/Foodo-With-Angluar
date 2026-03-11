@@ -1,8 +1,8 @@
-import { Component,Input } from '@angular/core';
-import { AuthButtons } from "../auth-buttons/auth-buttons";
+import { Component, Input, OnInit } from '@angular/core';
+import { AuthButtons } from '../auth-buttons/auth-buttons';
 import { NgIf } from '@angular/common';
-import { ProfileButton } from "../profile-button/profile-button";
-import {  RouterLink, RouterLinkActive } from '@angular/router';
+import { ProfileButton } from '../profile-button/profile-button';
+import { RouterLink, RouterLinkActive } from '@angular/router';
 import { LandingPageLinks } from '../../../features/landing/components/landing-page-links';
 
 @Component({
@@ -11,25 +11,30 @@ import { LandingPageLinks } from '../../../features/landing/components/landing-p
   templateUrl: './navbar.html',
   styleUrl: './navbar.css',
 })
-export class Navbar {
+export class Navbar implements OnInit {
+  ngOnInit(): void {
+    if (sessionStorage.getItem('token') != null || localStorage.getItem('token') != null) {
+      this.isLoggedIn = true;
+    }
+  }
   // constructor(public router: Router) {}
 
-  isLoggedIn : boolean=false;
-  @Input() isLandingPage:boolean=true;
-  login(){
-    this.isLoggedIn=true;
+  isLoggedIn: boolean = false;
+  @Input() isLandingPage: boolean = true;
+  logout() {
+        sessionStorage.removeItem('token');
+    localStorage.removeItem('token');
+
+    this.isLoggedIn = false;
   }
-  logout(){
-    this.isLoggedIn=false;
+
+  isMenuOpen = false;
+
+  toggleMenu() {
+    this.isMenuOpen = !this.isMenuOpen;
   }
-isMenuOpen = false;
 
-toggleMenu() {
-  this.isMenuOpen = !this.isMenuOpen;
-}
-
-closeMenu() {
-  this.isMenuOpen = false;
-}
-
+  closeMenu() {
+    this.isMenuOpen = false;
+  }
 }

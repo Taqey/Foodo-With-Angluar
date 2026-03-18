@@ -1,9 +1,10 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, inject, Input, OnInit } from '@angular/core';
 import { AuthButtons } from '../auth-buttons/auth-buttons';
 import { NgIf } from '@angular/common';
 import { ProfileButton } from '../profile-button/profile-button';
 import { RouterLink, RouterLinkActive } from '@angular/router';
 import { LandingPageLinks } from '../../../features/landing/components/landing-page-links';
+import { AuthenticationService } from '../../../core/services/AuthenticationService/authentication-service';
 
 @Component({
   selector: 'app-navbar',
@@ -12,6 +13,7 @@ import { LandingPageLinks } from '../../../features/landing/components/landing-p
   styleUrl: './navbar.css',
 })
 export class Navbar implements OnInit {
+  private authService = inject(AuthenticationService);
   ngOnInit(): void {
     if (sessionStorage.getItem('token') != null || localStorage.getItem('token') != null) {
       this.isLoggedIn = true;
@@ -22,9 +24,8 @@ export class Navbar implements OnInit {
   isLoggedIn: boolean = false;
   @Input() isLandingPage: boolean = true;
   logout() {
-        sessionStorage.removeItem('token');
-    localStorage.removeItem('token');
 
+    this.authService.logout();
     this.isLoggedIn = false;
   }
 

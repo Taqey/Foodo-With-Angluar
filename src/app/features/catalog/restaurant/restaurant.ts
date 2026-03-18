@@ -1,34 +1,46 @@
-import { Component, Input } from '@angular/core';
+import { Component, Input, signal, Signal, WritableSignal } from '@angular/core';
 import { Search } from '../../../shared/components/search/search';
 import { DashboardHeader } from '../../merchant-dashboard/components/dashboard-header/dashboard-header';
 import { CustomerFilter } from '../../merchant-dashboard/customers/components/customer-filter/customer-filter';
 import { RestaurantFilter } from '../components/restaurant-filter/restaurant-filter';
 import { Sort, SortOption } from '../../../shared/components/sort/sort';
-import { RouterLink } from "@angular/router";
-import { IRestaurant } from '../../../core/models/irestaurant';
-import { PaginationComponent } from "../../../shared/components/pagination/pagination";
+import { RouterLink } from '@angular/router';
+import { ShopDto } from '../../../core/models/irestaurant';
+import { PaginationComponent } from '../../../shared/components/pagination/pagination';
+import { RestaurantService } from '../../../core/services/RestaurantService/restaurant-service';
+import { IPaginatedResponse } from '../../../core/models/ipaginated-response';
+import { IProduct } from '../../../core/models/iproduct';
+import { OrderingDirection } from '../../../core/enums/ordering-direction';
+import { ProductOrderBy } from '../../../core/enums/product-order-by';
+import { RestaurantOrderBy } from '../../../core/enums/restaurant-order-by';
 
 @Component({
   selector: 'app-restaurant',
   imports: [
     RestaurantFilter,
-    DashboardHeader,
-    CustomerFilter,
     Search,
     Sort,
     RouterLink,
-    PaginationComponent
-],
+    PaginationComponent,
+  ],
   templateUrl: './restaurant.html',
   styleUrl: './restaurant.css',
 })
 export class Restaurant {
-onPageChange($event: number) {
-throw new Error('Method not implemented.');
-}
-onPageSizeChange($event: number) {
-throw new Error('Method not implemented.');
-}
+  onPageChange(newPage: number) {
+    this.currentPage = newPage;
+    this.LoadRestaurants(); // استدعاء API حسب newPage
+  }
+
+  onCategorySelected(category: number) {
+    this.category = category;
+    this.LoadRestaurants();
+  }
+  onPageSizeChange(newSize: number) {
+    this.pageSize = newSize;
+    this.currentPage = 1; // ترجع أول صفحة
+    this.LoadRestaurants();
+  }
 
   @Input() sort: SortOption[] = [
     { name: 'Name (A → Z)', value: 'name_asc' },
@@ -37,51 +49,34 @@ throw new Error('Method not implemented.');
     { name: 'Rating (Low → High)', value: 'rating_asc' },
   ];
 
-  // ✅ مطابق للـ Interfaces الحقيقية عندك
-  restaurants: IRestaurant[] = [
-    {
-      id: "2b7324a4-cb2a-46c1-aef0-3dfcc3d35c67",
-      name: 'Hamada Hambka',
-      description: 'OM ALI WAHDA BAS',
-      rating: 4.2,
-      categories: [
-        { category: 'DessertShop' } // ✅ مش name
-      ],
-      image: {
-        imageUrl: 'https://res.cloudinary.com/dpmszwgay/image/upload/v1764940017/Foodo_Merchants/rruonuwh8kh4x5nnfcir.jpg' // ✅ مش url
-      }
-    },
-    {
-      id: "4caa35c9-0661-4263-88af-3c2d41ab60d9",
-      name: 'McDonald\'s',
-      description: 'McDonald’s',
-      rating: 4.0,
-      categories: [
-        { category: 'FastFood' },
-        { category: 'American' },
-        { category: 'Cafe' }
-      ],
-      image: {
-        imageUrl: 'https://res.cloudinary.com/dpmszwgay/image/upload/v1764341561/Foodo_Merchants/zt6fnfqtiztld8oc8mkx.webp'
-      }
-    },
-    {
-      id: "7fe3428b-328c-4330-b12b-156731975f3e",
-      name: 'testingStore',
-      description: 'testing',
-      rating: 3.5,
-      categories: [
-        { category: 'FastFood' },
-        { category: 'CasualDining' }
-      ],
-      image: {
-        imageUrl: 'https://res.cloudinary.com/dpmszwgay/image/upload/v1764338808/Foodo_Merchants/b1oty1yxixsnrfzrl1eu.jpg'
-      }
-    }
-  ];
-currentPage: any;
-pageSize: any;
-totalItems: any;
+  totalItems: number = 0;
+  totalPages: number = 0;
+  currentPage: number = 1;
+  pageSize: number = 5;
+  category!: number;
+  sortBy!: number;
+  sortDirection!: number;
 
-  constructor() {}
+  paginatedData: WritableSignal<ShopDto[]> = signal([]);
+  constructor(private restaurantService: RestaurantService) {}
+  LoadRestaurants() {
+    this.restaurantService.getRestaurants(this.currentPage, this.pageSize,this.category).subscribe((response) => {
+        console.log(response.data?.items); // ✅ تحقق من البيانات المستلمة
+        this.paginatedData.set(response.data?.items || []); // ✅ تأكد من التعامل مع null أو undefined
+        this.totalItems = response.data?.totalItems || 0; // ✅ تأكد من التعامل مع null أو undefined
+        this.totalPages = response.data?.totalPages || 0; // ✅ تأكد من التعامل مع null أو undefined
+
+    });
+  }
+  OnSortChange(sort: string) {
+    const parts = sort.split('_');
+    const [sortByStr, directionStr] = sort.split('_');
+    this.sortBy = RestaurantOrderBy[sortByStr as keyof typeof RestaurantOrderBy];
+    this.sortDirection = OrderingDirection[directionStr as keyof typeof OrderingDirection];
+
+    this.LoadRestaurants();
+  }
+  ngOnInit(): void {
+    this.LoadRestaurants();
+  }
 }

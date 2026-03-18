@@ -4,37 +4,37 @@
     <div
         class="flex items-center justify-between bg-white dark:bg-surface-dark p-4 rounded-xl border border-[#dae3e7] dark:border-gray-700 shadow-sm gap-4">
         <app-search search="Search for restaurant...."></app-search>
-        <app-sort [sort]="sort"></app-sort>
+        <app-sort [sort]="sort" (SelectedSort)="OnSortChange($event)"></app-sort>
     </div>
     <!-- <app-customer-filter></app-customer-filter> -->
-    <app-restaurant-filter></app-restaurant-filter>
+    <app-restaurant-filter (categorySelected)="onCategorySelected($event)"></app-restaurant-filter>
 
     <!-- Row 3 -->
     <div class="flex items-center justify-between mb-8 mt-8">
         <h2 class="text-2xl font-display font-bold text-gray-900 dark:text-white">
             Partner Restaurants
-            <span class="text-gray-400 font-normal text-lg ml-2">(124)</span>
+            <span class="text-gray-400 font-normal text-lg ml-2">({{totalItems}})</span>
         </h2>
     </div>
 
     <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8" >
-    @for (item of restaurants; track $index) {
+    @for (item of paginatedData(); track $index) {
 
         <div
-            class="group bg-surface-light dark:bg-surface-dark rounded-2xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300 border border-gray-100 dark:border-gray-800 cursor-pointer" [routerLink]="['/restaurants',item.id]">
+            class="group bg-surface-light dark:bg-surface-dark rounded-2xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300 border border-gray-100 dark:border-gray-800 cursor-pointer" [routerLink]="['/restaurants',item.shopId]">
             <div class="relative h-48 overflow-hidden">
                 <img alt="Restaurant Cover"
                     class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
-                    [src]="item.image.imageUrl" />
-                <div
+                    [src]="item.url" />
+                <!-- <div
                     class="absolute top-4 right-4 bg-white/90 dark:bg-black/50 backdrop-blur-md px-2 py-1 rounded-lg flex items-center gap-1 shadow-sm">
                     <span class="material-icons-round text-yellow-400 text-sm">star</span>
                     <span class="text-xs font-bold text-gray-900 dark:text-white">{{item.rating}}</span>
                     <span class="text-[10px] text-gray-500">(1.2k)</span>
-                </div>
+                </div> -->
                 <div class="absolute bottom-4 left-4 flex items-center gap-3">
                     <div class="w-12 h-12 rounded-xl bg-white p-1 shadow-lg">
-                        <img alt="Logo" class="w-full h-full rounded-lg object-contain" [src]="item.image.imageUrl" />
+                        <img alt="Logo" class="w-full h-full rounded-lg object-contain" [src]="item.url" />
                     </div>
                 </div>
             </div>
@@ -42,11 +42,11 @@
                 <div class="flex justify-between items-start mb-2">
                     <h3
                         class="font-display font-bold text-lg text-gray-900 dark:text-white group-hover:text-primary transition-colors">
-                        {{item.name}}</h3>
+                        {{item.shopName}}</h3>
                 </div>
                 <p class="text-sm text-gray-500 dark:text-gray-400 mb-4">
-                    @for (cat of item.categories; track cat.category; let last = $last) {
-                    {{ cat.category }}
+                    @for (cat of item.categories; track category; let last = $last) {
+                    {{ cat }}
                     @if (!last) { • }
                     }
                 </p>
@@ -66,12 +66,7 @@
     }
 </div>
 
-<app-pagination
-  [currentPage]="currentPage"
-  [pageSize]="pageSize"
-  [totalItems]="totalItems"
-  [pageSizes]="[5,10,20]"
-  (pageChange)="onPageChange($event)"
-  (pageSizeChange)="onPageSizeChange($event)">
+    <app-pagination [currentPage]="currentPage" [pageSize]="pageSize" [totalItems]="totalItems" [pageSizes]="[5,10,20]"
+        [TotalPages]="totalPages" (pageChange)="onPageChange($event)" (pageSizeChange)="onPageSizeChange($event)">
 </app-pagination>
 </main>

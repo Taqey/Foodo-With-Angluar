@@ -1,56 +1,60 @@
-    <main class="">
-        <div class="relative h-[300px] md:h-[450px] w-full">
-            <img alt="Restaurant Interior" class="w-full h-full object-cover"
-                src="https://lh3.googleusercontent.com/aida-public/AB6AXuDGi0xc1DIwJBPDTSN5dQN6xPxXsx0NF6n76fTGEWUlQSVhlmlnZPgMGRfjtsZqr8ssg3wpnakMUU2iJDUyOx2atR_aynUQi2jYrqw9i261QG5Q1ymyWjVEZPmOhnEplHOXNOsv0JUCtNK0O_EYPrnbtnN-GsxbXE2R_RLu0VPoc2IOkErHAjXE9RQyq3Q0LgM4bLM0NOfNOd4nqvRGgnPsUPgdXIL8LS2Oaxmfle6CzZmfFD3fwRKmw0_KlhNmkeP03sWCe7zPu6w" />
-            <div class="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent"></div>
-            <div class="absolute bottom-0 left-0 w-full p-6 md:p-12">
-                <div class="max-w-7xl mx-auto">
-                    <div class="flex flex-col md:flex-row md:items-end justify-between gap-6">
-                        <div>
-                            <div class="flex items-center gap-2 mb-2">
-                                <span class="bg-primary text-white text-xs font-bold px-2 py-1 rounded">FEATURED</span>
-                                <span class="bg-green-500 text-white text-xs font-bold px-2 py-1 rounded">OPEN</span>
-                            </div>
-                            <h1 class="font-display text-3xl md:text-5xl font-bold text-white mb-2">The Golden Grill
-                                House</h1>
-                            <p class="text-gray-200 text-lg flex items-center gap-2">
-                                <span class="material-icons-round text-primary">location_on</span>
-                                123 Gourmet Street, Foodville, FV 45678
-                            </p>
+@if (warningMessage()) {
+<div class="fixed top-6 right-6 bg-red-500 text-white px-4 py-3 rounded-xl shadow-lg z-50">
+    {{ warningMessage() }}
+</div>
+}
+<main class="">
+    <div class="relative h-[300px] md:h-[450px] w-full">
+        <img alt="Restaurant Interior" class="w-full h-full object-cover"
+            src="https://lh3.googleusercontent.com/aida-public/AB6AXuDGi0xc1DIwJBPDTSN5dQN6xPxXsx0NF6n76fTGEWUlQSVhlmlnZPgMGRfjtsZqr8ssg3wpnakMUU2iJDUyOx2atR_aynUQi2jYrqw9i261QG5Q1ymyWjVEZPmOhnEplHOXNOsv0JUCtNK0O_EYPrnbtnN-GsxbXE2R_RLu0VPoc2IOkErHAjXE9RQyq3Q0LgM4bLM0NOfNOd4nqvRGgnPsUPgdXIL8LS2Oaxmfle6CzZmfFD3fwRKmw0_KlhNmkeP03sWCe7zPu6w" />
+        <div class="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent"></div>
+        <div class="absolute bottom-0 left-0 w-full p-6 md:p-12">
+            <div class="max-w-7xl mx-auto">
+                <div class="flex flex-col md:flex-row md:items-end justify-between gap-6">
+                    <div>
+                        <div class="flex items-center gap-2 mb-2">
+                            <span class="bg-primary text-white text-xs font-bold px-2 py-1 rounded">FEATURED</span>
+                            <span class="bg-green-500 text-white text-xs font-bold px-2 py-1 rounded">OPEN</span>
                         </div>
-                        <div
-                            class="flex items-center gap-4 bg-white/10 backdrop-blur-md p-4 rounded-2xl border border-white/20">
-                            <div class="text-center px-4 border-r border-white/20">
-                                <div class="flex items-center justify-center gap-1 text-yellow-400 mb-1">
-                                    <span class="material-icons-round">star</span>
-                                    <span class="text-xl font-bold text-white">4.8</span>
-                                </div>
-                                <p class="text-gray-300 text-xs uppercase tracking-wider">500+ Ratings</p>
+                        <h1 class="font-display text-3xl md:text-5xl font-bold text-white mb-2">{{
+                            restaurant()?.shopName }}</h1>
+                        <p class="text-gray-200 text-lg flex items-center gap-2">
+                            <span class="material-icons-round text-primary">location_on</span>
+                            123 Gourmet Street, Foodville, FV 45678
+                        </p>
+                    </div>
+                    <div
+                        class="flex items-center gap-4 bg-white/10 backdrop-blur-md p-4 rounded-2xl border border-white/20">
+                        <div class="text-center px-4 border-r border-white/20">
+                            <div class="flex items-center justify-center gap-1 text-yellow-400 mb-1">
+                                <span class="material-icons-round">star</span>
+                                <span class="text-xl font-bold text-white">4.8</span>
                             </div>
-                            <div class="text-center px-4">
-                                <div class="text-xl font-bold text-white mb-1">25-35</div>
-                                <p class="text-gray-300 text-xs uppercase tracking-wider">Mins Delivery</p>
-                            </div>
+                            <p class="text-gray-300 text-xs uppercase tracking-wider">500+ Ratings</p>
+                        </div>
+                        <div class="text-center px-4">
+                            <div class="text-xl font-bold text-white mb-1">25-35</div>
+                            <p class="text-gray-300 text-xs uppercase tracking-wider">Mins Delivery</p>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
-        <div
-            class="bg-surface-light dark:bg-surface-dark border-b border-gray-100 dark:border-gray-800 ">
-            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-                <div class="flex items-center justify-between">
-                    <nav class="flex space-x-8 overflow-x-auto hide-scrollbar">
-                        <a class="py-5 text-sm font-semibold whitespace-nowrap category-nav-active"
-                            href="#starters">Starters</a>
-                        <a class="py-5 text-sm font-medium text-gray-500 hover:text-primary whitespace-nowrap transition-colors"
-                            href="#main-course">Main Course</a>
-                        <a class="py-5 text-sm font-medium text-gray-500 hover:text-primary whitespace-nowrap transition-colors"
-                            href="#desserts">Desserts</a>
-                        <a class="py-5 text-sm font-medium text-gray-500 hover:text-primary whitespace-nowrap transition-colors"
-                            href="#beverages">Beverages</a>
-                    </nav>
-                    <div
+    </div>
+    <div class="bg-surface-light dark:bg-surface-dark border-b border-gray-100 dark:border-gray-800 ">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between">
+                <nav class="flex space-x-8 overflow-x-auto hide-scrollbar">
+                    <a class="py-5 text-sm font-semibold whitespace-nowrap category-nav-active"
+                        href="#starters">Starters</a>
+                    <a class="py-5 text-sm font-medium text-gray-500 hover:text-primary whitespace-nowrap transition-colors"
+                        href="#main-course">Main Course</a>
+                    <a class="py-5 text-sm font-medium text-gray-500 hover:text-primary whitespace-nowrap transition-colors"
+                        href="#desserts">Desserts</a>
+                    <a class="py-5 text-sm font-medium text-gray-500 hover:text-primary whitespace-nowrap transition-colors"
+                        href="#beverages">Beverages</a>
+                </nav>
+                <!-- <div
                         class="hidden lg:flex items-center gap-6 py-5 border-l border-gray-100 dark:border-gray-800 pl-8">
                         <div class="flex items-center gap-2 text-sm text-gray-600 dark:text-gray-400">
                             <span class="material-icons-round text-primary text-lg">schedule</span>
@@ -60,14 +64,14 @@
                             <span class="material-icons-round text-primary text-lg">payments</span>
                             <span>Min. Order $15.00</span>
                         </div>
-                    </div>
-                </div>
+                    </div> -->
             </div>
         </div>
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10">
-            <div class="flex flex-col lg:grid lg:grid-cols-12 gap-10">
-                <div class="lg:col-span-8 space-y-12">
-                    <section id="starters">
+    </div>
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10">
+        <div class="flex flex-col lg:grid lg:grid-cols-12 gap-10">
+            <div class="lg:col-span-8 space-y-12">
+                <!-- <section id="starters">
                         <div class="flex items-center gap-4 mb-8">
                             <h2 class="font-display text-2xl font-bold text-gray-900 dark:text-white">Starters</h2>
                             <div class="h-[1px] flex-1 bg-gray-100 dark:bg-gray-800"></div>
@@ -118,8 +122,41 @@
                                 </div>
                             </div>
                         </div>
-                    </section>
-                    <section id="main-course">
+                    </section> -->
+
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                    @for (item of productlist(); track item.productId) {
+                    <div class="bg-surface-light dark:bg-surface-dark border border-gray-100 dark:border-gray-800 rounded-2xl p-4 flex gap-4 hover:shadow-xl hover:shadow-primary/5 transition-all group cursor-pointer"
+                        [routerLink]="['/food', item.productId]">
+
+                        <div class="flex-1">
+                            <h3
+                                class="font-bold text-gray-900 dark:text-white mb-1 group-hover:text-primary transition-colors">
+                                {{ item.productName }}
+                            </h3>
+
+                            <p class="text-sm text-gray-500 dark:text-gray-400 mb-4 line-clamp-2">
+                                {{ item.productDescription }}
+                            </p>
+
+                            <div class="flex items-center justify-between mt-auto">
+                                <span class="font-bold text-primary text-lg">${{ item.price }}</span>
+
+                                <button (click)="$event.stopPropagation(); addProductToCart(item)"
+                                    class="bg-gray-100 dark:bg-gray-800 hover:bg-primary hover:text-white text-gray-700 dark:text-gray-300 p-2 rounded-xl transition-all">
+                                    <span class="material-icons-round">add</span>
+                                </button>
+                            </div>
+                        </div>
+
+                        <div class="w-24 h-24 flex-shrink-0">
+                            <img [alt]="item.productName" class="w-full h-full object-cover rounded-xl shadow-sm"
+                                [src]="getMainImage(item)" />
+                        </div>
+                    </div>
+                    }
+                </div>
+                <!-- <section id="main-course">
                         <div class="flex items-center gap-4 mb-8">
                             <h2 class="font-display text-2xl font-bold text-gray-900 dark:text-white">Main Course</h2>
                             <div class="h-[1px] flex-1 bg-gray-100 dark:bg-gray-800"></div>
@@ -168,43 +205,123 @@
                                 </div>
                             </div>
                         </div>
-                    </section>
-                </div>
-                <div class="lg:col-span-4 hidden lg:block">
-                    <div
-                        class="bg-surface-light dark:bg-surface-dark rounded-2xl border border-gray-100 dark:border-gray-800 shadow-sm sticky top-[164px]">
-                        <div class="p-6 border-b border-gray-100 dark:border-gray-800">
-                            <h2
-                                class="font-display text-xl font-bold text-gray-900 dark:text-white flex items-center gap-2">
-                                <span class="material-icons-round text-primary">shopping_basket</span>
-                                Your Cart
-                            </h2>
+                    </section> -->
+            </div>
+            <div class="lg:col-span-4 hidden lg:block">
+                <div
+                    class="bg-surface-light dark:bg-surface-dark rounded-2xl border border-gray-100 dark:border-gray-800 shadow-sm sticky top-[164px]">
+                    <div class="p-6 border-b border-gray-100 dark:border-gray-800">
+                        <h2
+                            class="font-display text-xl font-bold text-gray-900 dark:text-white flex items-center gap-2">
+                            <span class="material-icons-round text-primary">shopping_basket</span>
+                            Your Cart
+                        </h2>
+                    </div>
+
+                    <div class="p-6">
+                        @if (cartItems().length === 0) {
+                        <div class="text-center py-10">
+                            <img alt="Empty Cart" class="w-32 h-32 mx-auto mb-4 opacity-20 grayscale"
+                                src="https://lh3.googleusercontent.com/aida-public/AB6AXuBMHc9R_Ppk9D_Ni4uy4JxwmPsyrdAoFywI3NEdY969NTsu8ryZZyoipSiZ8g7pORRubEeBQqVLpsvXL3w6XO9EXRwu3xgrLyKWyFy57RSt3NYAjirQ5VVd770wRekLhed3-oy12N5LQMmVvfv7WZ0w4Llm-IwBdK51_S2uc9_zZPIQHY_TJyc-MUykj8YSUva-Bbwvp0YQIyyaWNVf6YMXqezvRRlwjfDzklaNxtGgPGj2GGljqQYuRy8A-sA14-HPQvOXqDiK8HA" />
+                            <p class="text-gray-500 font-medium">Your cart is empty</p>
+                            <p class="text-sm text-gray-400 mt-1">Start adding delicious items!</p>
                         </div>
-                        <div class="p-6">
-                            <div class="text-center py-10">
-                                <img alt="Empty Cart" class="w-32 h-32 mx-auto mb-4 opacity-20 grayscale"
-                                    src="https://lh3.googleusercontent.com/aida-public/AB6AXuBMHc9R_Ppk9D_Ni4uy4JxwmPsyrdAoFywI3NEdY969NTsu8ryZZyoipSiZ8g7pORRubEeBQqVLpsvXL3w6XO9EXRwu3xgrLyKWyFy57RSt3NYAjirQ5VVd770wRekLhed3-oy12N5LQMmVvfv7WZ0w4Llm-IwBdK51_S2uc9_zZPIQHY_TJyc-MUykj8YSUva-Bbwvp0YQIyyaWNVf6YMXqezvRRlwjfDzklaNxtGgPGj2GGljqQYuRy8A-sA14-HPQvOXqDiK8HA" />
-                                <p class="text-gray-500 font-medium">Your cart is empty</p>
-                                <p class="text-sm text-gray-400 mt-1">Start adding delicious items!</p>
+                        } @else {
+                        <div class="space-y-4 max-h-[400px] overflow-y-auto pr-1">
+                            @for (cartItem of cartItems(); track cartItem.productId) {
+                            <div class="flex gap-3 border-b border-gray-100 dark:border-gray-800 pb-4">
+                                <img [src]="cartItem.image" [alt]="cartItem.productName"
+                                    class="w-16 h-16 rounded-xl object-cover" />
+
+                                <div class="flex-1 min-w-0">
+                                    <h3 class="font-semibold text-sm text-gray-900 dark:text-white line-clamp-1">
+                                        {{ cartItem.productName }}
+                                    </h3>
+
+                                    <p class="text-xs text-gray-500 mt-1">
+                                        ${{ cartItem.price }} x {{ cartItem.quantity }}
+                                    </p>
+
+                                    <p class="text-sm font-bold text-primary mt-1">
+                                        ${{ (cartItem.price * cartItem.quantity).toFixed(2) }}
+                                    </p>
+
+                                    <div class="flex items-center gap-2 mt-3">
+                                        <button (click)="decrease(cartItem.productId)"
+                                            class="w-8 h-8 rounded-lg bg-gray-100 dark:bg-gray-800 flex items-center justify-center">
+                                            <span class="material-icons-round text-sm">remove</span>
+                                        </button>
+
+                                        <span class="font-medium text-sm w-6 text-center">
+                                            {{ cartItem.quantity }}
+                                        </span>
+
+                                        <button (click)="increase(cartItem.productId)"
+                                            class="w-8 h-8 rounded-lg bg-gray-100 dark:bg-gray-800 flex items-center justify-center">
+                                            <span class="material-icons-round text-sm">add</span>
+                                        </button>
+
+                                        <button (click)="remove(cartItem.productId)"
+                                            class="ml-auto text-red-500 hover:text-red-600">
+                                            <span class="material-icons-round text-base">delete</span>
+                                        </button>
+                                    </div>
+                                </div>
                             </div>
-                            <div class="mt-6 pt-6 border-t border-gray-100 dark:border-gray-800">
-                                <div class="flex justify-between mb-2">
-                                    <span class="text-gray-500">Subtotal</span>
-                                    <span class="text-gray-900 dark:text-white font-medium">$0.00</span>
-                                </div>
-                                <div class="flex justify-between mb-4">
-                                    <span class="text-gray-500">Delivery Fee</span>
-                                    <span class="text-gray-900 dark:text-white font-medium">$0.00</span>
-                                </div>
-                                <div
-                                    class="flex justify-between mb-6 pt-4 border-t border-dashed border-gray-200 dark:border-gray-700">
-                                    <span class="text-lg font-bold text-gray-900 dark:text-white">Total</span>
-                                    <span class="text-lg font-bold text-primary">$0.00</span>
-                                </div>
-                                <button
-                                    class="w-full py-4 bg-gray-100 dark:bg-gray-800 text-gray-400 font-bold rounded-xl cursor-not-allowed transition-colors"
-                                    disabled="">
-                                    Checkout Now
+                            }
+                        </div>
+                        }
+
+                        <div class="mt-6 pt-6 border-t border-gray-100 dark:border-gray-800">
+                            <div class="flex justify-between mb-2">
+                                <span class="text-gray-500">Subtotal</span>
+                                <span class="text-gray-900 dark:text-white font-medium">
+                                    ${{ subtotal().toFixed(2) }}
+                                </span>
+                            </div>
+
+                            <div class="flex justify-between mb-4">
+                                <span class="text-gray-500">Delivery Fee</span>
+                                <span class="text-gray-900 dark:text-white font-medium">
+                                    ${{ deliveryFee().toFixed(2) }}
+                                </span>
+                            </div>
+
+                            <div
+                                class="flex justify-between mb-6 pt-4 border-t border-dashed border-gray-200 dark:border-gray-700">
+                                <span class="text-lg font-bold text-gray-900 dark:text-white">Total</span>
+                                <span class="text-lg font-bold text-primary">
+                                    ${{ total().toFixed(2) }}
+                                </span>
+                            </div>
+
+                            <div class="flex gap-3">
+                                <button (click)="handleCheckout()"
+                                    class="checkout-btn relative flex-1 h-14 overflow-hidden rounded-xl font-bold shadow-lg transition-all duration-300"
+                                    [class.bg-primary]="cartItems().length > 0"
+                                    [class.text-white]="cartItems().length > 0"
+                                    [class.hover:bg-primary]="cartItems().length > 0"
+                                    [class.hover:scale-[1.02]]="cartItems().length > 0"
+                                    [class.active:scale-[0.98]]="cartItems().length > 0"
+                                    [class.bg-gray-100]="cartItems().length === 0"
+                                    [class.dark:bg-gray-800]="cartItems().length === 0"
+                                    [class.text-gray-400]="cartItems().length === 0"
+                                    [class.cursor-not-allowed]="cartItems().length === 0"
+                                    [class.checkout-animate]="isCheckoutAnimating()"
+                                    [disabled]="cartItems().length === 0">
+
+                                    <span
+                                        class="moped-icon material-symbols-outlined absolute left-4 top-1/2 -translate-y-1/2 text-[26px] pointer-events-none">
+                                        moped
+                                    </span>
+
+<span class="checkout-text text-md font-bold tracking-wide uppercase">
+    Checkout Now
+</span>                                </button>
+                                <button (click)="clearCart()"
+                                    class="px-4 py-4 rounded-xl bg-red-50 text-red-500 hover:bg-red-100 font-bold"
+                                    [disabled]="cartItems().length === 0">
+                                    Clear
                                 </button>
                             </div>
                         </div>
@@ -212,4 +329,5 @@
                 </div>
             </div>
         </div>
-    </main>
+    </div>
+</main>

@@ -7,6 +7,7 @@ import { ProductPhotosDto } from "./iproduct-photos-dto";
 export interface IProduct {
     price?: number;
     storeName:String;
+    storeId?: string | null;
     productCategories?: string[] | null;
     productDescription?: null | string;
     productDetailAttributes?: ProductDetailAttributeDto[] | null;
@@ -14,5 +15,6 @@ export interface IProduct {
     productId?: number;
     productName?: null | string;
     urls?: ProductPhotosDto[] | null;
+
 }
 

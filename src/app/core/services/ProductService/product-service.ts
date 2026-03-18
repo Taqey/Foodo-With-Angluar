@@ -8,6 +8,7 @@ import { HttpClient, HttpParams } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { IProduct } from '../../models/iproduct';
 import { IPaginatedResponse } from '../../models/ipaginated-response';
+import { ApiResponse } from '../../models/api-response';
 
 @Injectable({
   providedIn: 'root',
@@ -29,7 +30,7 @@ export class ProductService {
     orderBy?: number,
     orderingDirection?: number,
     restaurantId?: string,
-  ): Observable<IPaginatedResponse<IProduct>> {
+  ): Observable<ApiResponse<IPaginatedResponse<IProduct>>> {
       let params = new HttpParams();
 
   if (pageNumber != null) params = params.set('pageNumber', pageNumber.toString());
@@ -40,7 +41,7 @@ export class ProductService {
   if (orderingDirection != null) params = params.set('orderingDirection', orderingDirection);
 
   // استدعاء الـ API
-  return this._http.get<IPaginatedResponse<IProduct>>(this.baseUrl, { params });  }
+  return this._http.get<ApiResponse<IPaginatedResponse<IProduct>>>(this.baseUrl, { params });  }
   
   getProductById(id: number): Observable<IProduct> {
     return this._http.get<IProduct>(`${this.baseUrl}/${id}`);

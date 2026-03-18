@@ -1,11 +1,12 @@
 import { HttpClient } from '@angular/common/http';
-import { Injectable } from '@angular/core';
+import { inject, Injectable } from '@angular/core';
 import { Observable } from 'rxjs/internal/Observable';
 import { ApiResponse } from '../../models/api-response';
 import { JwtDto } from '../../models/jwt-dto';
 import { environment } from '../ProductService/product-service';
 import { jwtDecode } from 'jwt-decode';
 import { tap } from 'rxjs';
+import { Router } from '@angular/router';
   
 
 @Injectable({
@@ -13,6 +14,7 @@ import { tap } from 'rxjs';
 })
 export class AuthenticationService {
   private baseUrl = `${environment.apiUrl}/Authentication`;
+  private router = inject(Router);
   constructor(private http: HttpClient) {}
 
   // Login
@@ -26,6 +28,7 @@ export class AuthenticationService {
   logout(): void {
     localStorage.removeItem('token');
     sessionStorage.removeItem('token');
+    this.router.navigate(['/login']);
   }
   setToken(token: string, remember: boolean): void {
     if (remember) {
@@ -36,7 +39,7 @@ export class AuthenticationService {
   }
 getUserRole(): string | null {
 
-  const token = localStorage.getItem('token') || sessionStorage.getItem('token');
+  const token=  localStorage.getItem('token') || sessionStorage.getItem('token');
   if (!token) return null;
 
   const decodedToken: any = jwtDecode(token);

@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, EventEmitter, Output } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { CategoryModal } from "../category-modal/category-modal";
 
@@ -50,6 +50,8 @@ export class RestaurantFilter {
 
   selectedCategory = this.mainCategories[0];
   modalOpen = false;
+    @Output() categorySelected =new EventEmitter<number>();
+
 
   openModal() {
     this.modalOpen = true;
@@ -62,5 +64,6 @@ export class RestaurantFilter {
   onSelectCategory(category: { name: string; icon: string }) {
     this.selectedCategory = category;
     this.closeModal();
+    this.categorySelected.emit(this.restaurantCategories.indexOf(category)); // إرسال الفئة المحددة
   }
 }

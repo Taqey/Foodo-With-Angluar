@@ -74,9 +74,9 @@ export class Food implements OnInit {
       .subscribe((res) => {
         console.log(res); // 👈 اطبع ده
 
-        this.productlist.set(res.data.items);
-        this.totalItems = res.data.totalItems;
-        this.totalPages = res.data.totalPages;
+        this.productlist.set(res.data?.items || []); // ✅ تأكد من التعامل مع null أو undefined
+        this.totalItems = res.data?.totalItems || 0; // ✅ تأكد من التعامل مع null أو undefined
+        this.totalPages = res.data?.totalPages || 0; // ✅ تأكد من التعامل مع null أو undefined
       });
   }
 
